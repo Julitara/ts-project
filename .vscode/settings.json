@@ -3,4 +3,10 @@
   "i18n-ally.keystyle": "nested",
   "i18n-ally.sourceLanguage": "russian",
   "i18n-ally.displayLanguage": "ru",
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+   "editor.codeActionsOnSave": {
+     "source.fixAll.stylelint": "always"
+   },
 }
