@@ -10,18 +10,18 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
-  const { className } = props;
+export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props: ThemeSwitcherProps) => {
+    const { className } = props;
 
-  const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
-  return (
-    <Button 
-      onClick={toggleTheme} 
-      className={classNames(cls.themeSwitcher, {}, [className])}
-      theme={ThemeButton.CLEAR}
-    >
-      {theme === Theme.DARK ? <DarkIcon /> : <LightIcon/>} 
-    </Button>
-  );
+    return (
+        <Button 
+            onClick={toggleTheme} 
+            className={classNames(cls.themeSwitcher, {}, [className])}
+            theme={ThemeButton.CLEAR}
+        >
+            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon/>} 
+        </Button>
+    );
 };

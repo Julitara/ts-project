@@ -7,16 +7,16 @@ interface LangSwitcherProps {
   className?: string;
 }
 
-export const LangSwitcher: React.FC<LangSwitcherProps> = (props) => {
-  const { className } = props;
+export const LangSwitcher: React.FC<LangSwitcherProps> = (props: LangSwitcherProps) => {
+    const { className } = props;
 
-  const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
 
-  const toggle = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-  };
+    const toggle = () => {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
-  return (
+    return (
         <Button 
             className={classNames(cls.langSwitcher, {}, [className])}
             theme={ThemeButton.CLEAR} 
@@ -24,5 +24,5 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = (props) => {
             {t('Язык')}
         </Button>
         
-  );
+    );
 };
