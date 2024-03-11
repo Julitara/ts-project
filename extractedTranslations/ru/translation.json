@@ -1,4 +1,5 @@
 {
+  "An unexpected error occurred": "An unexpected error occurred",
   "Loading": {
     "": {
       "": {
@@ -7,6 +8,8 @@
     }
   },
   "NotFoundPAge": "NotFoundPAge",
+  "Refresh the page": "Refresh the page",
+  "throw error": "throw error",
   "toggle": "toggle",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
