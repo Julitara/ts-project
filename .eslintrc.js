@@ -3,6 +3,7 @@ module.exports = {
         browser: true,
         es2021: true,
         jest: true,
+        node: true,
     },
     extends: [
         'eslint:recommended',
@@ -10,13 +11,17 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
         'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
     ],
     overrides: [
         {
             env: {
                 node: true,
             },
-            files: ['.eslintrc.{js,cjs}'],
+            files: ['.eslintrc.{js,cjs}', '**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
             parserOptions: {
                 sourceType: 'script',
             },
@@ -43,7 +48,13 @@ module.exports = {
             2,
             { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
         ],
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid', 'to'],
+            },
+        ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
     },
 };
