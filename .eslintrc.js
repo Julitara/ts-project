@@ -21,7 +21,7 @@ module.exports = {
             files: ['.eslintrc.{js,cjs}', '**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
-                'max-len': 'off'
+                'max-len': 'off',
             },
             parserOptions: {
                 sourceType: 'script',
@@ -59,5 +59,6 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        '@typescript-eslint/no-var-requires': 0,
     },
 };
