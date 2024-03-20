@@ -5,8 +5,8 @@ import { Button, ButtonTheme } from './Button';
 describe('Button', () => {
 
     test('button test: render', () => {
-        render(<Button>test</Button>);
-        expect(screen.getByText('test')).toBeInTheDocument();
+        render(<Button>testing</Button>);
+        expect(screen.getByText('testing')).toBeInTheDocument();
     });
 
     test('button test: add clear class', () => {
