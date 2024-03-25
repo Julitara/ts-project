@@ -8,5 +8,8 @@
   "shortLang": "РУ",
   "sign": "Войти",
   "Enter username": "Введите имя",
-  "Enter password": "Введите пароль"
+  "Enter password": "Введите пароль",
+  "form auth": "Форма авторизации",
+  "error login": "Вы ввели неверный логин или пароль",
+  "logout": "Выйти"
 }
