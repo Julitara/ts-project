@@ -1,5 +1,5 @@
 {
-  "Язык": "English",
+  "lang": "English",
   "О сайте": "About page",
   "Главная страница": "Main page",
   "NotFoundPAge": "Not Found Page",
@@ -11,5 +11,6 @@
   "Enter password": "Enter password",
   "form auth": "Authorization form",
   "error login": "You entered an incorrect username or password",
-  "logout": "Logout"
+  "logout": "Logout",
+  "Profile": "Profile"
 }

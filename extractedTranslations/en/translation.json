@@ -1,31 +1,18 @@
 {
-  "": "",
-  " out": "",
   "An unexpected error occurred": "An unexpected error occurred",
   "Enter password": "Enter password",
-  "Enter password)": "Enter password)",
   "Enter username": "Enter username",
-  "Loading": {
-    "": {
-      "": {
-        "": ""
-      }
-    }
-  },
-  "NotFoundPAge": "NotFoundPAge",
+  "NotFoundPAge": "Not Found Page",
+  "PROFILE PAGE": "PROFILE PAGE",
+  "Profile": "Profile",
   "Refresh the page": "Refresh the page",
-  "error login": "",
-  "form auth": "form auth",
-  "log out": "",
-  "logout": "",
-  "sign": "sign",
-  "sign our": "",
-  "sign out": "",
+  "error login": "You entered an incorrect username or password",
+  "form auth": "Authorization form",
+  "logout": "Logout",
+  "shortLang": "EN",
+  "sign": "Login",
   "throw error": "throw error",
-  "toggle": "toggle",
-  "Вы ввели неверный логин или пароль": "Вы ввели неверный логин или пароль",
-  "Главная страница": "Главная страница",
-  "О сайте": "О сайте",
-  "Язык": "Язык",
-  "пкпукпук": "пкпукпук"
+  "Главная страница": "Main page",
+  "О сайте": "About page",
+  "Язык": "English"
 }
