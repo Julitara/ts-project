@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
-import { InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
+import { InputHTMLAttributes, MutableRefObject, memo, useEffect, useRef, useState } from 'react';
 
 // Omit allows to remove all props from a type but exclude those that we don’t need
 //The first argument is what you want to take away, and the second is what you want to exclude
@@ -26,7 +26,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
 
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef() as MutableRefObject<HTMLInputElement>;
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);

@@ -11,6 +11,7 @@ import { userActions } from 'entities/User';
 
 const App = () => {
     const dispatch = useDispatch();
+    
 
     useEffect(() => {
         dispatch(userActions.initAuthData());

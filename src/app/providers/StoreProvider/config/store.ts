@@ -1,12 +1,15 @@
-import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
-import { StateShema } from './StateShema';
+import { CombinedState, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import { StateShema, ThunkExtraArg } from './StateShema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
+import { $api } from 'shared/api/api';
+import { NavigateOptions, To } from 'react-router-dom';
 
 export function createReduxStore(
     initialState?: StateShema, 
-    asyncReducers?: ReducersMapObject<StateShema>
+    asyncReducers?: ReducersMapObject<StateShema>,
+    navigate?: (to: To, options?: NavigateOptions) => void
 ) {
 
     const rootReducers: ReducersMapObject<StateShema> = {
@@ -17,12 +20,23 @@ export function createReduxStore(
 
     const reducerManager = createReducerManager(rootReducers);
 
-    const store = configureStore<StateShema>({
-        reducer: reducerManager.reduce,
+    const extraArg: ThunkExtraArg = {
+        api: $api,
+        navigate
+    };
+
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateShema>>,
         devTools: __IS_DEV__,
-        preloadedState: initialState
+        preloadedState: initialState,
+        middleware: getDefaultMiddleware => getDefaultMiddleware({
+            thunk: {
+                extraArgument: extraArg
+            }
+        })
     });
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     store.reducerManager = reducerManager;
 

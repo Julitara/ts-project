@@ -12,5 +12,8 @@
   "form auth": "Форма авторизации",
   "error login": "Вы ввели неверный логин или пароль",
   "logout": "Выйти",
-  "Profile": "Профиль"
+  "Profile": "Профиль",
+  "profile": {
+    "firstname": ""
+  }
 }
