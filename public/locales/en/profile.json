@@ -1,8 +1,13 @@
 {
-  "profile": {
     "profile user": "Profile user",
     "edit": "Edit profile",
     "firstname": "Firstname",
-    "lastname": "Lastname"
-  }
+    "lastname": "Lastname",
+    "profile error": "Error loading profile",
+    "profile refresh page": "Reload the page",
+    "cancel": "Cancel",
+    "save": "Save",
+    "Your username": "Your username",
+    "Avatar": "Change avatar"
+    
 }

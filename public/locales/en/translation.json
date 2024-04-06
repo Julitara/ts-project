@@ -12,5 +12,7 @@
   "form auth": "Authorization form",
   "error login": "You entered an incorrect username or password",
   "logout": "Logout",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Currency": "Specify currency",
+  "Country": "Specify country"
 }

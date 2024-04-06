@@ -31,11 +31,12 @@ export interface ReduxStoreWithManadger extends ToolkitStore<StateShema> {
 }
 
 export interface ThunkExtraArg {
-    api: AxiosInstance,
+    api: AxiosInstance;
     navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {
-    rejectValue: T,
-    extra: ThunkExtraArg
+    rejectValue: T;
+    extra: ThunkExtraArg;
+    state: StateShema;
 }
