@@ -8,5 +8,8 @@
   "scss.validate": false,
    "editor.codeActionsOnSave": {
      "source.fixAll.stylelint": "always"
-   },
+  },
+   "files.associations": {
+    "**/.fttemplates/**": "plaintext"
+  }
 }
