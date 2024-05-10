@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
 
 export default {
-    title: '[TM_DIRECTORY/^(?:[^\\\\]*\\\\){3}([^\\\\]+).*/$1/]/ArticlesPage',
+    title: 'page/ArticlesPage',
     component: ArticlesPage,
     argTypes: {
         backgroundColor: { control: 'color' },

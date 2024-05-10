@@ -2,6 +2,7 @@ import { AnyAction, CombinedState, Reducer, ReducersMapObject }
     from '@reduxjs/toolkit';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import { AxiosInstance } from 'axios';
+import { ArticleDetailsShema } from 'entities/Article';
 import { CounterShema } from 'entities/Counter';
 import { ProfileShema } from 'entities/Profile';
 import { UserShema } from 'entities/User';
@@ -15,6 +16,7 @@ export interface StateShema {
     //async reducers
     loginForm?: LoginShema;
     profile?: ProfileShema;
+    articleDetails?: ArticleDetailsShema;
 }
 
 export type StateShemaKey = keyof StateShema;

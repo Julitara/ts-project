@@ -1,23 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import ArticleDetailsPage from './ArticleDetailsPage';
-import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { StateShema } from 'app/providers/StoreProvider';
+import { ArticleBlockType, ArticleType } from '../types/article';
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from './getArticleDetailsData';
 
-export default {
-    title: 'page/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage { ...args } />;
-
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: {
+describe('getArticleDetails.test', () => {
+    test('should return true', () => {
+        const data = {
             'id': '1',
             'title': 'Javascript news',
             'subtitle': 'Что нового в JS за 2022 год?',
@@ -85,6 +72,35 @@ Normal.decorators = [StoreDecorator({
                     ]
                 }
             ]
-        }
-    }
-})];
+        };
+        const state: DeepPartial<StateShema> = {
+            articleDetails: {
+                data
+            }
+        };        
+        expect(getArticleDetailsData(state as StateShema)).toEqual(data);
+    });
+
+    test('empty state', () => {
+        const state: DeepPartial<StateShema> = {};
+        expect(getArticleDetailsData(state as StateShema)).toEqual(undefined);
+    });
+
+    test('state with error', () => {
+        const state: DeepPartial<StateShema> = {
+            articleDetails: {
+                error: 'error'
+            }
+        };
+        expect(getArticleDetailsError(state as StateShema)).toEqual('error');
+    });
+
+    test('state with loading', () => {
+        const state: DeepPartial<StateShema> = {
+            articleDetails: {
+                isLoading: true
+            }
+        };
+        expect(getArticleDetailsLoading(state as StateShema)).toEqual(true);
+    });
+});
