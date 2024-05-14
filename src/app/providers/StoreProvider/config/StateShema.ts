@@ -7,6 +7,7 @@ import { CounterShema } from 'entities/Counter';
 import { ProfileShema } from 'entities/Profile';
 import { UserShema } from 'entities/User';
 import { LoginShema } from 'features/AuthByUsername';
+import { ArticleDetailsCommentShema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateShema {
@@ -17,6 +18,7 @@ export interface StateShema {
     loginForm?: LoginShema;
     profile?: ProfileShema;
     articleDetails?: ArticleDetailsShema;
+    articleDetailsComments?: ArticleDetailsCommentShema;
 }
 
 export type StateShemaKey = keyof StateShema;
