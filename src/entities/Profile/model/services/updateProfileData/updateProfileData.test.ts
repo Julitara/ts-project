@@ -11,7 +11,7 @@ const data = {
     firstname: 'Julia',
     lastname: 'Tarasova',
     city: 'New York',
-    currency: Currency.USD
+    currency: Currency.USD,
 };
 
 describe('updateProfileData.test', () => {

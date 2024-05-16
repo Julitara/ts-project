@@ -22,6 +22,8 @@ import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 const reducers: ReducersList = {
     profile: profileReducer
@@ -42,6 +44,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
     const isLoading = useSelector(getProfileLoading);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('server error'),
@@ -51,11 +54,17 @@ const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t('no data')
     };
 
-    useEffect(() => {
-        if(__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    // useEffect(() => {
+    //     if(__PROJECT__ !== 'storybook') {
+    //         dispatch(fetchProfileData());
+    //     }
+    // }, [dispatch]);
+
+    useInitialEffect(() => {
+        if(id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string | undefined) => {
         dispatch(profileActions.updateProfile({firstname: value}));
@@ -90,7 +99,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
     },[dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader/>
                 {validateErrors?.length && validateErrors.map((err, i) => (

@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,42 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "trrrrrrrrrrrrrr",
+      "id": "f9T4MJ-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "gggggg",
+      "id": "0KpP-ei"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ggggggrtrhtyjtyjtyeje",
+      "id": "ZfY1Y8o"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hohohoho",
+      "id": "SaKqqCe"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "jjjjjj",
+      "id": "Ze9dlN-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hfhhh",
+      "id": "MBsxXG9"
     }
   ],
   "users": [
@@ -118,14 +156,28 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7gtRgyojngs9MCWCpX_q9nI2msuKNLzUZ5WoBknB02ZdqpQwkVOjCLYmQKTkKjyVMq0&usqp=CAU"
     }
   ],
-  "profile": {
-    "firstname": "Julia",
-    "lastname": "Tarasova",
-    "age": 31,
-    "currency": "USD",
-    "country": "Canada",
-    "city": "New York",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Julia",
+      "lastname": "Tarasova",
+      "age": 31,
+      "currency": "USD",
+      "country": "Canada",
+      "city": "Toronto",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "LalaGata",
+      "lastname": "Black",
+      "age": 28,
+      "currency": "USD",
+      "country": "USA",
+      "city": "New York",
+      "username": "ladybag",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7gtRgyojngs9MCWCpX_q9nI2msuKNLzUZ5WoBknB02ZdqpQwkVOjCLYmQKTkKjyVMq0&usqp=CAU"
+    }
+  ]
 }

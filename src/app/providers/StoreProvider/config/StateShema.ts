@@ -6,6 +6,7 @@ import { ArticleDetailsShema } from 'entities/Article';
 import { CounterShema } from 'entities/Counter';
 import { ProfileShema } from 'entities/Profile';
 import { UserShema } from 'entities/User';
+import { AddCommentFormShema } from 'features/AddCommentForm';
 import { LoginShema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentShema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
@@ -19,6 +20,7 @@ export interface StateShema {
     profile?: ProfileShema;
     articleDetails?: ArticleDetailsShema;
     articleDetailsComments?: ArticleDetailsCommentShema;
+    addCommentForm?: AddCommentFormShema;
 }
 
 export type StateShemaKey = keyof StateShema;

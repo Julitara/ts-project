@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
@@ -20,7 +20,13 @@ import {
     getArticleCommentsIsLoading 
 } from '../../model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchCommentByArticleId } from '../../model/services/fetchCommentByArticleId';
+import { 
+    fetchCommentByArticleId 
+} from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
+import { AddCommentFormAsync } from 'features/AddCommentForm';
+import { 
+    addCommentForArticle 
+} from '../../model/services/addCommentForArticle/addCommentForArticle';
 
 interface ArticleDetailsPageProps {
    className?: string;
@@ -39,6 +45,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const error = useSelector(getArticleCommentsError);
     const dispatch = useDispatch();
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     useInitialEffect(() => {
         dispatch(fetchCommentByArticleId(id));
     });
@@ -52,10 +62,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.articleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id}/>
                 <Text title={t('Comment')} className={cls.commentTitle}/>
+                <AddCommentFormAsync onSendComment={onSendComment}/>
                 <CommentList 
                     isLoading={commentsIsLoading}
                     comments={comments}/>

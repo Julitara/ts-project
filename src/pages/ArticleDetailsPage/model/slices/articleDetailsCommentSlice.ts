@@ -6,9 +6,11 @@ import {
 import { StateShema } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { ArticleDetailsCommentShema } from '../types/ArticleDetailsCommentShema';
-import { fetchCommentByArticleId } from '../services/fetchCommentByArticleId';
+import { 
+    fetchCommentByArticleId 
+} from '../services/fetchCommentByArticleId/fetchCommentByArticleId';
   
-const commentsAdapter = createEntityAdapter<Comment>({
+export const commentsAdapter = createEntityAdapter<Comment>({
     selectId: (comment: Comment) => comment.id,
 });
 
@@ -46,3 +48,4 @@ const articleDetailsCommentSlice = createSlice({
 });
   
 export const {reducer: articleDetailsCommentsReducer} = articleDetailsCommentSlice;
+export const {actions: articleDetailsCommentsActions} = articleDetailsCommentSlice;
