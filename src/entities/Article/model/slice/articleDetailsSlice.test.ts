@@ -11,6 +11,11 @@ const data = {
     img: 'src',
     views: 12,
     createdAt: '12.04.1993',
+    user: {
+        id: '1',
+        username: 'admin',
+        avatar: 'https://pbs.twimg.com/media/DVh_uJGWsAAbben?format=jpg&name=4096x4096'
+    },
     type: [ArticleType.IT],
     blocks: []
 };

@@ -4,7 +4,7 @@ import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorato
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 
 export default {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -24,6 +24,11 @@ Normal.decorators = [StoreDecorator({
             'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
             'views': 1022,
             'createdAt': '26.02.2022',
+            'user': {
+                id: '1',
+                username: 'admin',
+                avatar: 'https://pbs.twimg.com/media/DVh_uJGWsAAbben?format=jpg&name=4096x4096'
+            },
             'type': [ArticleType.IT],
             'blocks': [
                 {

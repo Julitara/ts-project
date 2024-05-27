@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { 
@@ -27,6 +27,8 @@ import { AddCommentFormAsync } from 'features/AddCommentForm';
 import { 
     addCommentForArticle 
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface ArticleDetailsPageProps {
    className?: string;
@@ -44,10 +46,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const error = useSelector(getArticleCommentsError);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentByArticleId(id));
@@ -64,6 +71,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+                <Button 
+                    onClick={onBackToList}
+                    theme={ButtonTheme.OUTLINE}
+                >
+                    {t('назад к списку')}
+                </Button>
                 <ArticleDetails id={id}/>
                 <Text title={t('Comment')} className={cls.commentTitle}/>
                 <AddCommentFormAsync onSendComment={onSendComment}/>
