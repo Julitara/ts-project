@@ -24,6 +24,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 
 const reducers: ReducersList = {
     profile: profileReducer
@@ -53,12 +54,6 @@ const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_USER_DATA]: t('incorrect user data'),
         [ValidateProfileError.NO_DATA]: t('no data')
     };
-
-    // useEffect(() => {
-    //     if(__PROJECT__ !== 'storybook') {
-    //         dispatch(fetchProfileData());
-    //     }
-    // }, [dispatch]);
 
     useInitialEffect(() => {
         if(id) {
@@ -100,7 +95,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader/>
                 {validateErrors?.length && validateErrors.map((err, i) => (
                     <Text 
@@ -123,7 +118,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
                     onChangeCountry={onChangeCountry}
                     readonly={readonly}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
        
     );
