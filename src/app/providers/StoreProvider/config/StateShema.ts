@@ -26,12 +26,14 @@ export interface StateShema {
 }
 
 export type StateShemaKey = keyof StateShema;
+export type MountedReducers = OptionalRecord<StateShemaKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateShema>;
     reduce: (state: StateShema, action: AnyAction) => CombinedState<StateShema>;
     add: (key: StateShemaKey, reducer: Reducer) => void;
     remove: (key: StateShemaKey) => void;
+    getMountedReducers: () => MountedReducers
 }
 
 export interface ReduxStoreWithManadger extends ToolkitStore<StateShema> {

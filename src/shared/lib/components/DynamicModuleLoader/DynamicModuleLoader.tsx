@@ -26,9 +26,14 @@ export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> =
         const dispatch = useDispatch();
 
         useEffect(() => {
+            const mountedReducers = store.reducerManager.getMountedReducers();
             Object.entries(reducers).forEach(([key, reducer]) => {
-                store.reducerManager.add(key as StateShemaKey, reducer);
-                dispatch({type: `@INIT ${key} reducer`});
+                const mounted = mountedReducers[key as StateShemaKey];
+
+                if (!mounted) {
+                    store.reducerManager.add(key as StateShemaKey, reducer);
+                    dispatch({type: `@INIT ${key} reducer`}); 
+                }
             });
     
             return () => {
