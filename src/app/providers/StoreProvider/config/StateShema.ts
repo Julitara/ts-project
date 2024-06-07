@@ -8,6 +8,7 @@ import { ProfileShema } from 'entities/Profile';
 import { UserShema } from 'entities/User';
 import { AddCommentFormShema } from 'features/AddCommentForm';
 import { LoginShema } from 'features/AuthByUsername';
+import { ScrollSaveShema } from 'features/ScrollSave';
 import { ArticleDetailsCommentShema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageShema } from 'pages/ArticlesPage';
 import { NavigateOptions, To } from 'react-router-dom';
@@ -15,6 +16,7 @@ import { NavigateOptions, To } from 'react-router-dom';
 export interface StateShema {
     counter: CounterShema;
     user: UserShema;
+    scrollSave: ScrollSaveShema;
 
     //async reducers
     loginForm?: LoginShema;
@@ -42,7 +44,7 @@ export interface ReduxStoreWithManadger extends ToolkitStore<StateShema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void
+    //navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {
