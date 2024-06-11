@@ -1,5 +1,5 @@
 import { StateShema } from 'app/providers/StoreProvider';
-import { ArticleView } from 'entities/Article';
+import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
 
 export const getArticlesPageLoading = (state: StateShema) => 
     state.articlesPage?.isLoading;
@@ -21,3 +21,15 @@ export const getArticlesPageHasMore = (state: StateShema) =>
 
 export const getArticlesPageInited = (state: StateShema) => 
     state.articlesPage?._inited;
+
+export const getArticlesPageOrder = (state: StateShema) => 
+    state.articlesPage?.order ?? 'asc';
+
+export const getArticlesPageSort = (state: StateShema) => 
+    state.articlesPage?.sort ?? ArticleSortField.CREATED;
+
+export const getArticlesPageSearch = (state: StateShema) => 
+    state.articlesPage?.search ?? '';
+
+export const getArticlesPageType = (state: StateShema) => 
+    state.articlesPage?.type ?? ArticleType.ALL;

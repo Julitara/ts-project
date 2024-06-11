@@ -5,6 +5,7 @@ import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 
 interface ArticleListProps {
    className?: string;
@@ -39,6 +40,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
             />
         );
     };
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+                <Text title={t('Not found')} size={TextSize.L}/>
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.articleList, {}, [className, cls[view]])}>

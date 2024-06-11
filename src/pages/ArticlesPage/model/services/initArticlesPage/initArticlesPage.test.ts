@@ -1,5 +1,4 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { initArticlesPage } from './initArticlesPage';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
@@ -19,7 +18,8 @@ describe('initArticlesPage.test', () => {
             }
         });
         
-        const result = await thunk.callThunk();
+        const params = new URLSearchParams();
+        const result = await thunk.callThunk(params);
 
         expect(thunk.dispatch).toBeCalledTimes(2);
     });
