@@ -9,9 +9,12 @@ import { UserShema } from 'entities/User';
 import { AddCommentFormShema } from 'features/AddCommentForm';
 import { LoginShema } from 'features/AuthByUsername';
 import { ScrollSaveShema } from 'features/ScrollSave';
-import { ArticleDetailsCommentShema } from 'pages/ArticleDetailsPage';
+import { 
+    ArticleDetailsCommentShema, 
+    ArticleDetailsPageRecommendationsShema, 
+    ArticleDetailsPageShema
+} from 'pages/ArticleDetailsPage';
 import { ArticlesPageShema } from 'pages/ArticlesPage';
-import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateShema {
     counter: CounterShema;
@@ -22,9 +25,9 @@ export interface StateShema {
     loginForm?: LoginShema;
     profile?: ProfileShema;
     articleDetails?: ArticleDetailsShema;
-    articleDetailsComments?: ArticleDetailsCommentShema;
     addCommentForm?: AddCommentFormShema;
     articlesPage?: ArticlesPageShema;
+    articleDetailsPage?: ArticleDetailsPageShema;
 }
 
 export type StateShemaKey = keyof StateShema;
