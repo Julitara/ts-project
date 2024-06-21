@@ -1,0 +1,17 @@
+{
+  "profile user": "Профиль пользователя",
+  "edit": "Редактировать профиль",
+  "firstname": "Ваше имя",
+  "lastname": "Ваша фамилия",
+  "profile error": "Ошибка загрузки",
+  "profile refresh page": "Перезагрузите страницу",
+  "cancel": "Отменить",
+  "save": "Coxpанить",
+  "Your username": "Ваш username",
+  "Avatar": "Изменить аватар",
+  "server error": "Ошибка на сервере",
+  "incorrect user age": "Некорректный возраст",
+  "incorrect user country": "Некорректный выбор страны",
+  "incorrect user data": "Некорректное имя или фамилия",
+  "no data": "Пустые поля"
+}

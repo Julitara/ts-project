@@ -4,7 +4,9 @@ export interface BuildPath {
     entry: string;
     build: string;
     html: string;
-    src: string
+    src: string;
+    locales: string;
+    buildLocales: string;
 }
 
 export interface BuildOptions {
