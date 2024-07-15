@@ -4,10 +4,6 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 import { StateShema } from 'app/providers/StoreProvider';
-import { Comment } from 'entities/Comment';
-import { 
-    fetchCommentByArticleId 
-} from '../services/fetchCommentByArticleId/fetchCommentByArticleId';
 import { 
     ArticleDetailsPageRecommendationsShema 
 } from '../types/ArticleDetailsPageRecommendationsShema';

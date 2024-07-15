@@ -4,7 +4,6 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
 import { scrollSaveReducer } from 'features/ScrollSave';
 
 export function createReduxStore(

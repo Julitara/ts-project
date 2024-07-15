@@ -9,9 +9,7 @@ import { UserShema } from 'entities/User';
 import { AddCommentFormShema } from 'features/AddCommentForm';
 import { LoginShema } from 'features/AuthByUsername';
 import { ScrollSaveShema } from 'features/ScrollSave';
-import { 
-    ArticleDetailsCommentShema, 
-    ArticleDetailsPageRecommendationsShema, 
+import {  
     ArticleDetailsPageShema
 } from 'pages/ArticleDetailsPage';
 import { ArticlesPageShema } from 'pages/ArticlesPage';

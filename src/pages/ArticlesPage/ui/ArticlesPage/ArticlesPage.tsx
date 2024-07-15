@@ -22,7 +22,7 @@ import {
 import { Page } from 'widgets/Page/Page';
 import { 
     fetchNextArticlePage 
-} from 'pages/ArticlesPage/model/services/fetchNextArticlePage/fetchNextArticlePage';
+} from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { useSearchParams } from 'react-router-dom';

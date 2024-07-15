@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CommentList } from './CommentList';
-import StoreDecorator from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'entities/CommentList',

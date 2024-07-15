@@ -1,7 +1,7 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 import { useTranslation } from 'react-i18next';
-import { ChangeEvent, memo, useMemo } from 'react';
+import { ChangeEvent, useMemo } from 'react';
 
 export interface SelectOption<T extends string> {
     value: T;
@@ -26,7 +26,6 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         onChange,
         readonly
     } = props;
-    const {t} = useTranslation();
 
     const optionList = useMemo(() => {
         return options?.map((opt) => (

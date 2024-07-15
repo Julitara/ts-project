@@ -33,7 +33,13 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', 'react', 'i18next', 'react-hooks'],
+    plugins: [
+        '@typescript-eslint',
+        'react',
+        'i18next',
+        'react-hooks',
+        'tarasovayuliya-plugin',
+    ],
     settings: {
         react: {
             version: 'detect',
@@ -61,11 +67,12 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         '@typescript-eslint/no-var-requires': 0,
         '@typescript-eslint/no-explicit-any': 0,
-        'react/display-name': 0
+        'react/display-name': 0,
+        'tarasovayuliya-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
-        __PROJECT__: true
-    }
+        __PROJECT__: true,
+    },
 };
