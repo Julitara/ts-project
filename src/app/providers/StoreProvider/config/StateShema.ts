@@ -4,24 +4,26 @@ import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsShema } from 'entities/Article';
 import { CounterShema } from 'entities/Counter';
-import { ProfileShema } from 'entities/Profile';
 import { UserShema } from 'entities/User';
 import { AddCommentFormShema } from 'features/AddCommentForm';
 import { LoginShema } from 'features/AuthByUsername';
+import { ProfileSchema } from 'features/EditableProfileCard';
 import { ScrollSaveShema } from 'features/ScrollSave';
 import {  
     ArticleDetailsPageShema
 } from 'pages/ArticleDetailsPage';
 import { ArticlesPageShema } from 'pages/ArticlesPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateShema {
     counter: CounterShema;
     user: UserShema;
     scrollSave: ScrollSaveShema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     //async reducers
     loginForm?: LoginShema;
-    profile?: ProfileShema;
+    profile?: ProfileSchema;
     articleDetails?: ArticleDetailsShema;
     addCommentForm?: AddCommentFormShema;
     articlesPage?: ArticlesPageShema;
