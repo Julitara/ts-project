@@ -1,4 +1,4 @@
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { getProfileData, getProfileError } from '../getProfileData/getProfileData';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
@@ -14,17 +14,17 @@ describe('getProfileData.test', () => {
             city: 'New York',
             currency: Currency.USD
         };
-        const state: DeepPartial<StateShema> = {
+        const state: DeepPartial<StateSchema> = {
             profile: {
                 data
             }
         };        
-        expect(getProfileData(state as StateShema)).toEqual(data);
+        expect(getProfileData(state as StateSchema)).toEqual(data);
     });
 
     test('empty state', () => {
-        const state: DeepPartial<StateShema> = {};
-        expect(getProfileData(state as StateShema)).toEqual(undefined);
+        const state: DeepPartial<StateSchema> = {};
+        expect(getProfileData(state as StateSchema)).toEqual(undefined);
     });
 
 });

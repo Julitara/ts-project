@@ -1,6 +1,6 @@
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getArticleDetailsData = (state: StateShema) => 
+export const getArticleDetailsData = (state: StateSchema) => 
     state?.articleDetails?.data || undefined;
-export const getArticleDetailsLoading = (state: StateShema) => state?.articleDetails?.isLoading;
-export const getArticleDetailsError = (state: StateShema) => state?.articleDetails?.error;
+export const getArticleDetailsLoading = (state: StateSchema) => state?.articleDetails?.isLoading;
+export const getArticleDetailsError = (state: StateSchema) => state?.articleDetails?.error;

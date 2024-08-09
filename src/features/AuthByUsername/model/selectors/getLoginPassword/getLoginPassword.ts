@@ -1,5 +1,5 @@
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getLoginPassword = (state: StateShema) => {
+export const getLoginPassword = (state: StateSchema) => {
     return state?.loginForm?.password || '';
 };

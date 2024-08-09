@@ -1,5 +1,5 @@
 import { CombinedState, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
-import { StateShema, ThunkExtraArg } from './StateShema';
+import { StateSchema, ThunkExtraArg } from './StateSсhema';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
@@ -8,12 +8,12 @@ import { scrollSaveReducer } from 'features/ScrollSave';
 import { rtkApi } from 'shared/api/rtkApi';
 
 export function createReduxStore(
-    initialState?: StateShema, 
-    asyncReducers?: ReducersMapObject<StateShema>,
+    initialState?: StateSchema, 
+    asyncReducers?: ReducersMapObject<StateSchema>,
     //navigate?: (to: To, options?: NavigateOptions) => void
 ) {
 
-    const rootReducers: ReducersMapObject<StateShema> = {
+    const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
@@ -29,7 +29,7 @@ export function createReduxStore(
     };
 
     const store = configureStore({
-        reducer: reducerManager.reduce as Reducer<CombinedState<StateShema>>,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: getDefaultMiddleware => getDefaultMiddleware({

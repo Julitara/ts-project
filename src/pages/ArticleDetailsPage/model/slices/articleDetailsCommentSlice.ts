@@ -3,7 +3,7 @@ import {
     createEntityAdapter,
     createSlice,
 } from '@reduxjs/toolkit';
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { ArticleDetailsCommentShema } from '../types/ArticleDetailsCommentShema';
 import { 
@@ -14,7 +14,7 @@ export const commentsAdapter = createEntityAdapter<Comment>({
     selectId: (comment: Comment) => comment.id,
 });
 
-export const getArticleComments = commentsAdapter.getSelectors<StateShema>(
+export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
     (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 );
   

@@ -1,13 +1,13 @@
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getProfileData = (state: StateShema) => state?.profile?.data || undefined;
+export const getProfileData = (state: StateSchema) => state?.profile?.data || undefined;
 
-export const getProfileError = (state: StateShema) => state?.profile?.error || '';
+export const getProfileError = (state: StateSchema) => state?.profile?.error || '';
 
-export const getProfileForm = (state: StateShema) => state?.profile?.form || undefined;
+export const getProfileForm = (state: StateSchema) => state?.profile?.form || undefined;
 
-export const getProfileLoading = (state: StateShema) => state?.profile?.isLoading;
+export const getProfileLoading = (state: StateSchema) => state?.profile?.isLoading;
 
-export const getProfileReadonly = (state: StateShema) => state?.profile?.readonly;
+export const getProfileReadonly = (state: StateSchema) => state?.profile?.readonly;
 
-export const getProfileValidateErrors = (state: StateShema) => state?.profile?.validateErrors;
+export const getProfileValidateErrors = (state: StateSchema) => state?.profile?.validateErrors;

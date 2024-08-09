@@ -1,5 +1,5 @@
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getLoginError = (state: StateShema) => {
+export const getLoginError = (state: StateSchema) => {
     return state?.loginForm?.error || undefined;
 };

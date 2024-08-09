@@ -15,7 +15,7 @@ import {
 import { ArticlesPageShema } from 'pages/ArticlesPage';
 import { rtkApi } from 'shared/api/rtkApi';
 
-export interface StateShema {
+export interface StateSchema {
     counter: CounterShema;
     user: UserShema;
     scrollSave: ScrollSaveShema;
@@ -30,18 +30,18 @@ export interface StateShema {
     articleDetailsPage?: ArticleDetailsPageShema;
 }
 
-export type StateShemaKey = keyof StateShema;
-export type MountedReducers = OptionalRecord<StateShemaKey, boolean>
+export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
-    getReducerMap: () => ReducersMapObject<StateShema>;
-    reduce: (state: StateShema, action: AnyAction) => CombinedState<StateShema>;
-    add: (key: StateShemaKey, reducer: Reducer) => void;
-    remove: (key: StateShemaKey) => void;
+    getReducerMap: () => ReducersMapObject<StateSchema>;
+    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+    add: (key: StateSchemaKey, reducer: Reducer) => void;
+    remove: (key: StateSchemaKey) => void;
     getMountedReducers: () => MountedReducers
 }
 
-export interface ReduxStoreWithManadger extends ToolkitStore<StateShema> {
+export interface ReduxStoreWithManadger extends ToolkitStore<StateSchema> {
     reducerManager: ReducerManager
 }
 
@@ -53,5 +53,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
     rejectValue: T;
     extra: ThunkExtraArg;
-    state: StateShema;
+    state: StateSchema;
 }

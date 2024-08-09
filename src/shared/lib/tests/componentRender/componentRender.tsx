@@ -1,5 +1,6 @@
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
-import { StateShema, StoreProvider } from 'app/providers/StoreProvider';
+import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
@@ -8,18 +9,20 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 export interface ComponentRenderOptions {
     route?: string;
-    initialState?: DeepPartial<StateShema>
+    initialState?: DeepPartial<StateSchema>,
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>> 
 }
 
 export function componentRender(component: ReactNode, options: ComponentRenderOptions = {}) {
     const {
         route = RoutePath.main,
-        initialState
+        initialState,
+        asyncReducers
     } = options;
 
     return render(
         <MemoryRouter initialEntries={[route]}>
-            <StoreProvider initialState={initialState}>
+            <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
                 <I18nextProvider i18n={i18nForTests}>
                     {component}
                 </I18nextProvider>

@@ -7,7 +7,7 @@ import { getScrollSaveByPath, scrollSaveActions } from 'features/ScrollSave';
 import { useLocation } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
 
 interface PageProps {
@@ -23,7 +23,7 @@ export const Page = ((props: PageProps) => {
     const dispatch = useAppDispatch();
     const {pathname} = useLocation();
     const scrollPosition = useSelector(
-        (state: StateShema) => getScrollSaveByPath(state, pathname));
+        (state: StateSchema) => getScrollSaveByPath(state, pathname));
 
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;

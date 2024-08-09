@@ -1,3 +1,3 @@
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getUserInited = (state: StateShema) => state.user._inited;
+export const getUserInited = (state: StateSchema) => state.user._inited;

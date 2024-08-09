@@ -1,11 +1,11 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManadger } from 'app/providers/StoreProvider';
-import { StateShema, StateShemaKey } from 'app/providers/StoreProvider/config/StateShema';
+import { StateSchema, StateSchemaKey } from 'app/providers/StoreProvider/config/StateSсhema';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 export type ReducersList = {
-    [nameKey in StateShemaKey]?: Reducer<NonNullable<StateShema[nameKey]>>;
+    [nameKey in StateSchemaKey]?: Reducer<NonNullable<StateSchema[nameKey]>>;
 }
 
 interface DynamicModuleLoaderProps {
@@ -28,10 +28,10 @@ export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> =
         useEffect(() => {
             const mountedReducers = store.reducerManager.getMountedReducers();
             Object.entries(reducers).forEach(([key, reducer]) => {
-                const mounted = mountedReducers[key as StateShemaKey];
+                const mounted = mountedReducers[key as StateSchemaKey];
 
                 if (!mounted) {
-                    store.reducerManager.add(key as StateShemaKey, reducer);
+                    store.reducerManager.add(key as StateSchemaKey, reducer);
                     dispatch({type: `@INIT ${key} reducer`}); 
                 }
             });
@@ -39,7 +39,7 @@ export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> =
             return () => {
                 if (removeAfterUnmount) {
                     Object.entries(reducers).forEach(([key]) => {
-                        store.reducerManager.remove(key as StateShemaKey);
+                        store.reducerManager.remove(key as StateSchemaKey);
                         dispatch({type: `@DESTROY ${key} reducer`});
                     });
                 }

@@ -1,4 +1,4 @@
-import { StateShema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { ArticleBlockType, ArticleType } from '../types/article';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from './getArticleDetailsData';
 
@@ -73,34 +73,34 @@ describe('getArticleDetails.test', () => {
                 }
             ]
         };
-        const state: DeepPartial<StateShema> = {
+        const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 data
             }
         };        
-        expect(getArticleDetailsData(state as StateShema)).toEqual(data);
+        expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
     });
 
     test('empty state', () => {
-        const state: DeepPartial<StateShema> = {};
-        expect(getArticleDetailsData(state as StateShema)).toEqual(undefined);
+        const state: DeepPartial<StateSchema> = {};
+        expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined);
     });
 
     test('state with error', () => {
-        const state: DeepPartial<StateShema> = {
+        const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 error: 'error'
             }
         };
-        expect(getArticleDetailsError(state as StateShema)).toEqual('error');
+        expect(getArticleDetailsError(state as StateSchema)).toEqual('error');
     });
 
     test('state with loading', () => {
-        const state: DeepPartial<StateShema> = {
+        const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 isLoading: true
             }
         };
-        expect(getArticleDetailsLoading(state as StateShema)).toEqual(true);
+        expect(getArticleDetailsLoading(state as StateSchema)).toEqual(true);
     });
 });
