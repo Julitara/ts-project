@@ -578,14 +578,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://pbs.twimg.com/media/DVh_uJGWsAAbben?format=jpg&name=4096x4096"
     },
     {
       "id": "2",
       "username": "user",
       "password": "1234",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7gtRgyojngs9MCWCpX_q9nI2msuKNLzUZ5WoBknB02ZdqpQwkVOjCLYmQKTkKjyVMq0&usqp=CAU"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "1234",
+      "roles": ["MANAGER"],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7gtRgyojngs9MCWCpX_q9nI2msuKNLzUZ5WoBknB02ZdqpQwkVOjCLYmQKTkKjyVMq0&usqp=CAU"
     }
   ],

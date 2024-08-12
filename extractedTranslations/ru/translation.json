@@ -1,6 +1,7 @@
 {
   "": "",
   "ALL": "ALL",
+  "Admin Panel": "Admin Panel",
   "An unexpected error occurred": "Произошла непредвиденная ошибка",
   "Avatar": "Avatar",
   "Comment": "Comment",
@@ -28,6 +29,7 @@
   "Your city": "Your city",
   "Your country": "Your country",
   "Your username": "Your username",
+  "admin panel": "admin panel",
   "age": "age",
   "ascending": "ascending",
   "by": "by",
@@ -68,6 +70,7 @@
   "Ошибка при загрузке страницы": "Ошибка при загрузке страницы",
   "Профиль не найден": "Профиль не найден",
   "Создать статью": "Создать статью",
+  "У вас нет доступа к этой странице": "У вас нет доступа к этой странице",
   "Укажите валюту": "Укажите валюту",
   "Язык": "Русский",
   "назад к списку": "назад к списку",
