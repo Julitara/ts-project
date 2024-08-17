@@ -9,11 +9,10 @@ export const fetchCommentByArticleId =
 
             const { extra, rejectWithValue} = thunkAPI;
 
-            if (!articleId) {
-                return rejectWithValue('error');
-            }
-
             try {
+                if (!articleId) {
+                    throw new Error();
+                }
                 const response = await extra.api.get<Comment[]>('/comments', {
                     params: {
                         articleId,
