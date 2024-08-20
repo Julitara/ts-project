@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleViewSelector.module.scss';
 import { useTranslation } from 'react-i18next';
-import { ArticleView } from '../../model/types/article';
 import IconSmallType from 'shared/assets/icons/articles_small.svg';
 import IconBigType from 'shared/assets/icons/articles_big.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleViewSelectorProps {
     className?: string;

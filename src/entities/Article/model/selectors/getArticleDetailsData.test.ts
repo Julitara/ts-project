@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { ArticleBlockType, ArticleType } from '../types/article';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsLoading } from './getArticleDetailsData';
+import { ArticleBlockType, ArticleType } from '../consts/consts';
 
 describe('getArticleDetails.test', () => {
     test('should return true', () => {

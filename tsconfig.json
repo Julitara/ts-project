@@ -12,8 +12,9 @@
       "baseUrl": ".",
       "strict": true,
       "paths": {
-        "*": ["./src/*"]
-      }
+        "*": ["./src/*"],
+      },
+      "isolatedModules": true,
     },
     "ts-node": {
         "compilerOptions": {

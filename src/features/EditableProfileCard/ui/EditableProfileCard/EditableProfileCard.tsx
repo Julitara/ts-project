@@ -4,7 +4,6 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
-import { ValidateProfileError } from '../../model/types/EditableProfileCardSchema';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { Currency } from 'entities/Currency';
@@ -21,6 +20,7 @@ import {
     getProfileValidateErrors 
 } from '../../model/selectors/getProfileData/getProfileData';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { ValidateProfileError } from '../../consts/consts';
 
 const reducers: ReducersList = {
     profile: profileReducer

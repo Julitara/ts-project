@@ -1,8 +1,8 @@
 export {ArticleDetailsPageAsync} from './ui/ArticleDetailsPage/ArticleDetailsPage.async';
 
-export {ArticleDetailsCommentShema} from './model/types/ArticleDetailsCommentShema';
-export {
+export type {ArticleDetailsCommentShema} from './model/types/ArticleDetailsCommentShema';
+export type {
     ArticleDetailsPageRecommendationsShema
 } from './model/types/ArticleDetailsPageRecommendationsShema';
 
-export {ArticleDetailsPageShema} from './model/types/index';
+export type {ArticleDetailsPageShema} from './model/types/index';

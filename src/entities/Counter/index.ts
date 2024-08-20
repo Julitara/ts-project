@@ -1,3 +1,3 @@
 export {counterReducer} from './model/slice/counterSlice';
 export {Counter} from './ui/Counter';
-export {CounterShema} from './model/types/CounterShema';
+export type {CounterShema} from './model/types/CounterShema';
