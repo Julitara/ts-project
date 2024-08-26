@@ -7,6 +7,9 @@
     z-index: -1;
     opacity: 0;
     pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .overlay {
