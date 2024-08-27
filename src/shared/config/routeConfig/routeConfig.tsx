@@ -1,13 +1,13 @@
-import { UserRole } from 'entities/User';
-import { AboutPageAsync } from 'pages/AboutPage';
-import { AdminPanelPageAsync } from 'pages/AdminPanelPage';
-import { ArticleDetailsPageAsync } from 'pages/ArticleDetailsPage';
-import ArticleEditPage from 'pages/ArticleEditPage/ui/ArticleEditPage';
-import { ArticlesPageAsync } from 'pages/ArticlesPage';
-import { ForbiddenPageAsync } from 'pages/ForbiddenPage';
-import { MainPageAsync } from 'pages/MainPage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { ProfilePageAsync } from 'pages/ProfilePage';
+import { UserRole } from '@/entities/User';
+import { AboutPageAsync } from '@/pages/AboutPage';
+import { AdminPanelPageAsync } from '@/pages/AdminPanelPage';
+import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage';
+import ArticleEditPage from '@/pages/ArticleEditPage/ui/ArticleEditPage';
+import { ArticlesPageAsync } from '@/pages/ArticlesPage';
+import { ForbiddenPageAsync } from '@/pages/ForbiddenPage';
+import { MainPageAsync } from '@/pages/MainPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePageAsync } from '@/pages/ProfilePage';
 import { RouteProps } from 'react-router-dom';
 
 export type AppRoutesProps = RouteProps & {

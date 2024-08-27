@@ -2,7 +2,7 @@ import {
     createContext, ReactNode, useContext, useEffect, useMemo, useRef, useState,
 } from 'react';
 
-type SpringType = typeof import('@react-spring/web');
+type SpringType = typeof import('@react-spring/web'); //types from lib
 type GestureType = typeof import('@use-gesture/react');
 
 interface AnimationContextPayload {

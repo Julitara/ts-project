@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
 axios.defaults.baseURL = 'https://frontend-ts-server-jscsvb1ys-julitaras-projects.vercel.app';
 axios.defaults.headers.common['Content-Type'] = 'application/json';

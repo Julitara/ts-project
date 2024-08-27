@@ -1,7 +1,7 @@
 import { Popover as PopoverUI } from '@headlessui/react';
 import { ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from 'shared/types/ui';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/mapperStyles';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './Popover.module.scss';

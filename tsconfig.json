@@ -12,7 +12,7 @@
       "baseUrl": ".",
       "strict": true,
       "paths": {
-        "*": ["./src/*"],
+        "@/*": ["./src/*"],
       },
       "isolatedModules": true,
     },
