@@ -1,5 +1,6 @@
 {
-    "compilerOptions": {
+    "compilerOptions": 
+    {
       "outDir": "./dist/",
       "noImplicitAny": true,
       "module": "ESNext",
@@ -15,19 +16,24 @@
         "@/*": ["./src/*"],
       },
       "isolatedModules": true,
+      "types": ["vite-plugin-svgr/client"]
     },
-    "ts-node": {
+    "ts-node": 
+    {
         "compilerOptions": {
             "module": "CommonJS"
         }
     },
-    "include": [
+    "include": 
+    [
       "./config/jest/setupTests.ts",
       "./src/**/*.ts",
       "./src/**/*.tsx"
     ],
-    "exclude": [
+    "exclude": 
+    [
       "node_modules"
     ],
+    
     
   }

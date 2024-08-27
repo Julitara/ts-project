@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NotificationButton.module.scss';
 import { Popover } from '@/shared/ui/Popups';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import NotificationIcon from '@/shared/assets/icons/notify.svg';
+import NotificationIcon from '@/shared/assets/icons/notify.svg?react';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import { NotificationList } from '@/entities/Notification';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';

@@ -8,7 +8,7 @@ import {
 } from '../../model/types/article';
 import { Text } from '@/shared/ui/Text/Text';
 import { Icon } from '@/shared/ui/Icon/Icon';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
+import EyeIcon from '@/shared/assets/icons/eye.svg?react';
 import { Card } from '@/shared/ui/Card/Card';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
