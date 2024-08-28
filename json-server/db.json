@@ -612,21 +612,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://pbs.twimg.com/media/DVh_uJGWsAAbben?format=jpg&name=4096x4096"
     },
     {
       "id": "2",
       "username": "user",
       "password": "1234",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7gtRgyojngs9MCWCpX_q9nI2msuKNLzUZ5WoBknB02ZdqpQwkVOjCLYmQKTkKjyVMq0&usqp=CAU"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "1234",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7gtRgyojngs9MCWCpX_q9nI2msuKNLzUZ5WoBknB02ZdqpQwkVOjCLYmQKTkKjyVMq0&usqp=CAU"
     }
   ],
@@ -652,6 +658,73 @@
       "city": "New York",
       "username": "ladybag",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7gtRgyojngs9MCWCpX_q9nI2msuKNLzUZ5WoBknB02ZdqpQwkVOjCLYmQKTkKjyVMq0&usqp=CAU"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "I7ofk1u"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "bcPnbbZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 2,
+      "feedback": "111",
+      "id": "atQf7it"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }
