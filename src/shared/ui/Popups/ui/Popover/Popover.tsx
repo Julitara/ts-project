@@ -25,7 +25,7 @@ export const Popover = (props: PopoverProps) => {
   
     return (
         <PopoverUI className={classNames(cls.popover, {}, [className, popupCls.position])}>
-            <PopoverUI.Button className={popupCls.trigger}>
+            <PopoverUI.Button as='div' className={popupCls.trigger}>
                 {trigger}
             </PopoverUI.Button>
 

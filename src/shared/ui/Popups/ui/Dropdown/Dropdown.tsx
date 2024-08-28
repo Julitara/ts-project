@@ -54,7 +54,6 @@ export function Dropdown(props: DropdownProps) {
                         )
                     );
                     if(item.href) {
-                        console.log(item);
                         return (
                             <Menu.Item 
                                 as={AppLink} 

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { [FTName] } from './[FTName]';
 
 export default {
-   title: '[FTName/^(?:[^\\\\]*\\\\){3}([^\\\\]+).*/$1/]/[FTName]',
+   title: '/[FTName]',
    component: [FTName],
    argTypes: {
       backgroundColor: { control: 'color' },

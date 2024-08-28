@@ -7,7 +7,6 @@ import NotificationIcon from '@/shared/assets/icons/notify.svg?react';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import { NotificationList } from '@/entities/Notification';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 
 interface NotificationButtonProps {
@@ -25,10 +24,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 
     const onCloseDrawer = useCallback(() => {
         setIsOpen(false);
-    }, []);
-
-    console.log(isMobile);
-    
+    }, []);    
 
     const trigger = (
         <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
