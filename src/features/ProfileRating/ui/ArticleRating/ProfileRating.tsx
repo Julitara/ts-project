@@ -1,19 +1,18 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleRating.module.scss';
 import { RatingCard } from '@/entities/Rating';
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
-interface ArticleRatingProps {
+interface ProfileRatingProps {
    className?: string;
    articleId: string;
 }
 
-export const ArticleRating = memo((props: ArticleRatingProps) => {
+export const ProfileRating = memo((props: ProfileRatingProps) => {
     const { className, articleId } = props;
     const { t } = useTranslation();
     const userData = useSelector(getUserAuthData);
@@ -60,7 +59,7 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
             onAccept={onAccept} 
             onCancel={onCancel}
             rate={rating?.rate}
-            className={classNames(cls.articleRating, {}, [className])}
+            className={className}
             title={t('Оцените статью')}
             feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
             hasFreedback

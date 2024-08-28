@@ -86,7 +86,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
                             {t('SEND')}
                         </Button>
                     </VStack>
-                    
                 </Drawer>
                 :
                 <Modal isOpen={isModalOpen} lazy>

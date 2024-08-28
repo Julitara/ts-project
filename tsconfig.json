@@ -16,7 +16,7 @@
         "@/*": ["./src/*"],
       },
       "isolatedModules": true,
-      "types": ["vite-plugin-svgr/client"]
+      "types": ["vite-plugin-svgr/client", "node"]
     },
     "ts-node": 
     {

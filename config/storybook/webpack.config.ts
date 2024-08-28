@@ -25,8 +25,12 @@ export default ({config}: {config: webpack.Configuration}) => {
                 return rule;
             });
     }
-
-    
+    if (config.resolve) {
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            '@': paths.src
+        };
+    }    
     config.module?.rules?.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],

@@ -3,6 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StarRating.module.scss';
 import { Icon } from '../Icon/Icon';
 import StarIcon from '@/shared/assets/icons/star-raiting.svg?react';
+import { HStack } from '../Stack';
 
 interface StarRatingProps {
    className?: string;
@@ -45,7 +46,7 @@ export const StarRating = memo((props: StarRatingProps) => {
     };
 
     return (
-        <div className={classNames(cls.starRaiting, {}, [className])}>
+        <HStack gap='8'>
             {stars.map(starNum => (
                 <Icon 
                     Svg={StarIcon} 
@@ -62,6 +63,6 @@ export const StarRating = memo((props: StarRatingProps) => {
                     onClick={onClick(starNum)}
                 />
             ))}
-        </div>
+        </HStack>
     );
 });

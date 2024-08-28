@@ -4,7 +4,6 @@ import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
 import { Card, CardTheme } from '@/shared/ui/Card/Card';
 import {Text} from '@/shared/ui/Text/Text';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface NotificationItemProps {
    className?: string;

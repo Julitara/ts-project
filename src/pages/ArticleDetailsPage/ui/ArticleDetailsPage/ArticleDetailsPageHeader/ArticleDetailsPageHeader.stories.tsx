@@ -3,7 +3,7 @@ import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-    title: 'pages/ArticleDetailsPageHeader',
+    title: 'pages/Article/ArticleDetailsPageHeader',
     component: ArticleDetailsPageHeader,
     argTypes: {
         backgroundColor: { control: 'color' },
