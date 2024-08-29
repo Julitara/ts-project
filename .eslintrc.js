@@ -38,7 +38,7 @@ module.exports = {
         'react',
         'i18next',
         'react-hooks',
-        'tarasovayuliya-plugin',
+        'path-checker-julitara',
     ],
     settings: {
         react: {
@@ -79,7 +79,7 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 0,
         '@typescript-eslint/no-explicit-any': 0,
         'react/display-name': 0,
-        'tarasovayuliya-plugin/path-checker': 'error',
+        'path-checker-julitara/path-checker': ['error', {alias: '@'}],
     },
     globals: {
         __IS_DEV__: true,
