@@ -2,7 +2,7 @@ import { UserRole } from '@/entities/User';
 import { AboutPageAsync } from '@/pages/AboutPage';
 import { AdminPanelPageAsync } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage';
-import ArticleEditPage from '@/pages/ArticleEditPage/ui/ArticleEditPage';
+import {ArticleEditPageAsync} from '@/pages/ArticleEditPage';
 import { ArticlesPageAsync } from '@/pages/ArticlesPage';
 import { ForbiddenPageAsync } from '@/pages/ForbiddenPage';
 import { MainPageAsync } from '@/pages/MainPage';
@@ -70,12 +70,12 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ARTICLE_CREATE]: {
         path: `${RoutePath.article_create}`,
-        element: <ArticleEditPage/>,
+        element: <ArticleEditPageAsync/>,
         authOnly: true
     },
     [AppRoutes.ARTICLE_EDIT]: {
         path: `${RoutePath.article_edit}`,
-        element: <ArticleEditPage/>,
+        element: <ArticleEditPageAsync/>,
         authOnly: true
     },
     [AppRoutes.ADMIN_PANEL]: {

@@ -79,7 +79,18 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 0,
         '@typescript-eslint/no-explicit-any': 0,
         'react/display-name': 0,
-        'path-checker-julitara/path-checker': ['error', {alias: '@'}],
+        'path-checker-julitara/path-checker': ['error', { alias: '@' }],
+        'path-checker-julitara/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
