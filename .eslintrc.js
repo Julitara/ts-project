@@ -80,6 +80,13 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 0,
         'react/display-name': 0,
         'path-checker-julitara/path-checker': ['error', { alias: '@' }],
+        'path-checker-julitara/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'path-checker-julitara/public-api-imports': [
             'error',
             {

@@ -4,5 +4,6 @@ export type {
     StateSchema, 
     ReduxStoreWithManadger, 
     ThunkConfig,
+    StateSchemaKey
 } from './config/StateSchema';
 export type {AppDispatch} from '../StoreProvider/config/StateSchema';
