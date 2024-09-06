@@ -12,7 +12,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { useTranslation } from 'react-i18next';
-import { Text, TextSize, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
 
 interface ArticleInfiniteListProps {
    className?: string;

@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { TextTheme, Text } from '@/shared/ui/Text/Text';
+import { TextTheme, Text } from '@/shared/ui/Text';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { Currency } from '@/entities/Currency';

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AvatarDropdown.module.scss';
 import { Dropdown } from '@/shared/ui/Popups';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { RoutePath } from '@/shared/const/router';
