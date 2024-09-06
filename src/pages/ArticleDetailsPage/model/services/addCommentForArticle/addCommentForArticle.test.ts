@@ -1,7 +1,7 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { addCommentForArticle } from './addCommentForArticle';
 
-describe('fetchCommentByArticleId.test', () => {
+describe('fetchCommentForArticle.test', () => {
 
     const data = {
         articleId: '1',
@@ -21,7 +21,6 @@ describe('fetchCommentByArticleId.test', () => {
         const thunk = new TestAsyncThunk(addCommentForArticle);
         thunk.api.post.mockReturnValue(Promise.resolve({data: data}));
         const result = await thunk.callThunk('text');
-        console.log(result);
         
         expect(thunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');

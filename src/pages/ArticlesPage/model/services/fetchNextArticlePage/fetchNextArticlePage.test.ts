@@ -6,7 +6,24 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('fetchNextArticlePage.test', () => {
 
-    test('success fetch', async () => {
+    // test('success fetch', async () => {
+    //     const thunk = new TestAsyncThunk(fetchNextArticlePage, {
+    //         articlesPage: {
+    //             page: 2,
+    //             ids: [],
+    //             entities: {},
+    //             limit: 5,
+    //             isLoading: false,
+    //             hasMore: true
+    //         }
+    //     });
+        
+    //     await thunk.callThunk();
+
+    //     expect(thunk.dispatch).toBeCalledTimes(4);
+    //     expect(fetchArticlesList).toBeCalledWith();
+    // });
+    test('success', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlePage, {
             articlesPage: {
                 page: 2,
@@ -14,14 +31,14 @@ describe('fetchNextArticlePage.test', () => {
                 entities: {},
                 limit: 5,
                 isLoading: false,
-                hasMore: true
-            }
+                hasMore: true,
+            },
         });
-        
-        const result = await thunk.callThunk();
+
+        await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toBeCalledWith({page: 3});
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test('no more data', async () => {

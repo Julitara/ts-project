@@ -41,6 +41,7 @@ export default {
     moduleNameMapper: {
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '\\.s?css$': 'identity-obj-proxy',
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
 
     // A set of global variables that need to be available in all test environments
