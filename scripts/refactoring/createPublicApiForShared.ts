@@ -1,4 +1,3 @@
-import { log } from 'console';
 import path from 'path';
 import {Project} from 'ts-morph';
 

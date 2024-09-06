@@ -39,6 +39,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'path-checker-julitara',
+        'unused-imports',
     ],
     settings: {
         react: {
@@ -98,6 +99,7 @@ module.exports = {
                 ],
             },
         ],
+        'unused-imports/no-unused-imports': 'error',
     },
     globals: {
         __IS_DEV__: true,
