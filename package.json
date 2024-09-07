@@ -25,7 +25,7 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "postinstall": "node ./scripts/clear-cache.js"
+    "postinstall": "rimraf ./node_modules/.cache"
   },
   "keywords": [],
   "author": "",

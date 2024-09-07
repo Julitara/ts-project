@@ -1,9 +1,9 @@
 import { counterReducer, counterActions } from './counterSlice';
-import { CounterShema } from '../types/CounterShema';
+import { CounterSchema } from '../types/CounterSchema';
 
 describe('counterSlice.test', () => {
     test('decrement', () => {
-        const state: CounterShema = {
+        const state: CounterSchema = {
             value: 10
         };
         expect(counterReducer(
@@ -12,7 +12,7 @@ describe('counterSlice.test', () => {
     });
 
     test('increment', () => {
-        const state: CounterShema = {
+        const state: CounterSchema = {
             value: 10
         };
         expect(counterReducer(

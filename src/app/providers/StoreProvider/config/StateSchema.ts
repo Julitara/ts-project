@@ -3,7 +3,7 @@ import { AnyAction, CombinedState, Reducer, ReducersMapObject }
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsShema } from '@/entities/Article';
-import { CounterShema } from '@/entities/Counter';
+import { CounterSchema } from '@/entities/Counter';
 import { UserShema } from '@/entities/User';
 import { AddCommentFormShema } from '@/features/AddCommentForm';
 import { LoginShema } from '@/features/AuthByUsername';
@@ -17,7 +17,7 @@ import { rtkApi } from '@/shared/api/rtkApi';
 import { createReduxStore } from './store';
 
 export interface StateSchema {
-    counter: CounterShema;
+    counter: CounterSchema;
     user: UserShema;
     scrollSave: ScrollSaveShema;
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
