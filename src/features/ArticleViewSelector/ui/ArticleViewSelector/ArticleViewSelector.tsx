@@ -5,7 +5,7 @@ import IconSmallType from '@/shared/assets/icons/articles_small.svg?react';
 import IconBigType from '@/shared/assets/icons/articles_big.svg?react';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
-import { ArticleView } from '../../model/consts/consts';
+import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
     className?: string;
