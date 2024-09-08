@@ -5,7 +5,7 @@ import { Page } from '@/widgets/Page';
 import { useParams } from 'react-router-dom';
 
 interface ArticleEditPageProps {
-   className?: string;
+   className?: string
 }
 
 const ArticleEditPage = (props: ArticleEditPageProps) => {
