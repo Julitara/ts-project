@@ -6,6 +6,7 @@ import { AppRoutesProps } from '@/shared/types/router';
 import { routeConfig } from '../config/routeConfig';
 
 const AppRouter = () => {
+    
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const element = (
             <>
@@ -21,7 +22,8 @@ const AppRouter = () => {
                     <RequireAuth roles={route.roles}>{element}</RequireAuth> 
                     : element}
             />
-        );}, []);
+        );
+    }, []);
 
     return (
         <Suspense fallback={<PageLoader/>}>
