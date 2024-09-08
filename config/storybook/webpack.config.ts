@@ -17,7 +17,7 @@ export default ({config}: {config: webpack.Configuration}) => {
 
     if (config.module?.rules) {
         config.module.rules = config.module?.rules
-            ?.map((rule: RuleSetRule | null | undefined | false | 0 | '' | '...') => {
+            ?.map((rule: RuleSetRule | '...') => {
                 if (rule && rule !== '...' && /svg/.test(rule.test as string)) {
                     return { ...rule, exclude: /\.svg$/i };
                 }
