@@ -19,7 +19,7 @@ describe('initArticlesPage.test', () => {
         });
         
         const params = new URLSearchParams();
-        const result = await thunk.callThunk(params);
+        await thunk.callThunk(params);
 
         expect(thunk.dispatch).toBeCalledTimes(2);
     });
