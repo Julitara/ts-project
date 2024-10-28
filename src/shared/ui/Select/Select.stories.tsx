@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import {  Select } from './Select';
+import { Select } from './Select';
 
 export default {
     title: 'shared/Select',
@@ -15,8 +15,8 @@ export const Primary = Template.bind({});
 Primary.args = {
     label: 'TEST',
     options: [
-        {value: '123', content: 'One'},
-        {value: '123', content: 'Two'},
-        {value: '123', content: 'Three'}
-    ]
+        { value: '123', content: 'One' },
+        { value: '123', content: 'Two' },
+        { value: '123', content: 'Three' },
+    ],
 };

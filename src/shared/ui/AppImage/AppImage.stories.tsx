@@ -9,9 +9,9 @@ export default {
     },
 } as ComponentMeta<typeof AppImage>;
 
-const Template: ComponentStory<typeof AppImage> = (args) => <AppImage { ...args } />;
+const Template: ComponentStory<typeof AppImage> = (args) => (
+    <AppImage {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};

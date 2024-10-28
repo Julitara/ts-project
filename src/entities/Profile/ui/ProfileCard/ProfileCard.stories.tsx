@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import {  ProfileCard } from './ProfileCard';
+import { ProfileCard } from './ProfileCard';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatar from '@/shared/assets/tests/icon.jpg';
@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof ProfileCard>;
 
-const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
+const Template: ComponentStory<typeof ProfileCard> = (args) => (
+    <ProfileCard {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -25,15 +27,15 @@ Primary.args = {
         city: 'New York',
         currency: Currency.USD,
         avatar,
-    }
+    },
 };
 
 export const withError = Template.bind({});
 withError.args = {
-    error: 'true'
+    error: 'true',
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-    isLoading: true
+    isLoading: true,
 };

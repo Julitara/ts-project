@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { PageError } from './PageError';
 
-
 export default {
     title: 'widgets/PageError',
     component: PageError,
@@ -10,7 +9,9 @@ export default {
     },
 } as ComponentMeta<typeof PageError>;
 
-const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args} />;
+const Template: ComponentStory<typeof PageError> = (args) => (
+    <PageError {...args} />
+);
 
 export const Error = Template.bind({});
 Error.args = {};

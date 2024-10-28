@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import {  Text, TextTheme, TextSize } from './Text';
+import { Text, TextTheme, TextSize } from './Text';
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
@@ -16,14 +16,14 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
     title: 'Title',
-    text: 'text'
+    text: 'text',
 };
 
 export const Error = Template.bind({});
 Error.args = {
     title: 'Title',
     text: 'text',
-    theme: TextTheme.ERROR
+    theme: TextTheme.ERROR,
 };
 
 export const OnlyTitle = Template.bind({});
@@ -39,7 +39,7 @@ OnlyText.args = {
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     title: 'Title',
-    text: 'text'
+    text: 'text',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -59,19 +59,19 @@ export const SizeTextM = Template.bind({});
 SizeTextM.args = {
     text: 'text',
     title: 'title',
-    size: TextSize.M
+    size: TextSize.M,
 };
 
 export const SizeTextL = Template.bind({});
 SizeTextL.args = {
     text: 'text',
     title: 'title',
-    size: TextSize.L
+    size: TextSize.L,
 };
 
 export const SizeTextS = Template.bind({});
 SizeTextS.args = {
     text: 'text',
     title: 'title',
-    size: TextSize.S
+    size: TextSize.S,
 };

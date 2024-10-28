@@ -4,7 +4,6 @@ import AboutPage from './AboutPage';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '@/shared/const/theme';
 
-
 export default {
     title: 'pages/AboutPage',
     component: AboutPage,

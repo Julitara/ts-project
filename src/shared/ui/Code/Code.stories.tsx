@@ -9,7 +9,7 @@ export default {
     },
 } as ComponentMeta<typeof Code>;
 
-const Template: ComponentStory<typeof Code> = (args) => <Code { ...args } />;
+const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -19,5 +19,5 @@ Normal.args = {
       argTypes: {
         backgroundColor: { control: 'color' },
       },
-    } as ComponentMeta<typeof Code>;`
+    } as ComponentMeta<typeof Code>;`,
 };

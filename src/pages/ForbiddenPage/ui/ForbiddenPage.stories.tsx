@@ -4,7 +4,6 @@ import ForbiddenPage from './ForbiddenPage';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '@/shared/const/theme';
 
-
 export default {
     title: 'pages/ForbiddenPage',
     component: ForbiddenPage,
@@ -21,4 +20,4 @@ Primary.decorators = [StoreDecorator({})];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK),StoreDecorator({})];
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

@@ -4,7 +4,6 @@ import MainPage from './MainPage';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '@/shared/const/theme';
 
-
 export default {
     title: 'pages/MainPage',
     component: MainPage,
@@ -17,12 +16,17 @@ const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({
-    counter: {value: 10}
-})];
+Primary.decorators = [
+    StoreDecorator({
+        counter: { value: 10 },
+    }),
+];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    counter: {value: 10}
-})];
+PrimaryDark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        counter: { value: 10 },
+    }),
+];

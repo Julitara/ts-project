@@ -9,7 +9,7 @@ export default {
     },
 } as ComponentMeta<typeof Flex>;
 
-const Template: ComponentStory<typeof Flex> = (args) => <Flex { ...args } />;
+const Template: ComponentStory<typeof Flex> = (args) => <Flex {...args} />;
 
 export const Row = Template.bind({});
 Row.args = {
@@ -20,7 +20,7 @@ Row.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
 
 export const Column = Template.bind({});
@@ -32,7 +32,7 @@ Column.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
 
 export const RowGap4 = Template.bind({});
@@ -44,7 +44,7 @@ RowGap4.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
 
 export const RowGap8 = Template.bind({});
@@ -56,7 +56,7 @@ RowGap8.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
 
 export const RowGap16 = Template.bind({});
@@ -68,7 +68,7 @@ RowGap16.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
 
 export const ColumnGap8 = Template.bind({});
@@ -81,7 +81,7 @@ ColumnGap8.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
 
 export const ColumnGap16 = Template.bind({});
@@ -94,7 +94,7 @@ ColumnGap16.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
 
 export const ColumnAlignEnd = Template.bind({});
@@ -107,6 +107,5 @@ ColumnAlignEnd.args = {
             <div>first</div>
             <div>first</div>
         </>
-    )
+    ),
 };
-

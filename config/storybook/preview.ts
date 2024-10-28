@@ -7,7 +7,12 @@ import { SuspenseDecorator } from
 import {Theme} from '../../src/shared/const/theme';
 
 export const parameters = {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: {
+        actions: {
+            onClick: () => {console.log('1');},  // Или укажите реальную функцию, если нужно
+            onSubmit: () => {console.log('1');} // Или укажите реальную функцию
+        },
+    },
     controls: {
         matchers: {
             color: /(background|color)$/i,
@@ -29,3 +34,4 @@ addDecorator(StyleDecorator);
 addDecorator(RouterDecorator);
 //addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(SuspenseDecorator);
+export const tags = ['autodocs', 'autodocs'];

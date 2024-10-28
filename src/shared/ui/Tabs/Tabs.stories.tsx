@@ -10,24 +10,24 @@ export default {
     },
 } as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => <Tabs { ...args } />;
+const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
     tabs: [
         {
             value: 'tab 1',
-            content: 'tab 111'
+            content: 'tab 111',
         },
         {
             value: 'tab 2',
-            content: 'tab 222'
+            content: 'tab 222',
         },
         {
             value: 'tab 3',
-            content: 'tab 333'
-        }
+            content: 'tab 333',
+        },
     ],
     value: 'tab 2',
-    onTabClick: action('onTabClick')
+    onTabClick: action('onTabClick'),
 };

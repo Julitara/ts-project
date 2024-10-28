@@ -9,16 +9,18 @@ export default {
     },
 } as ComponentMeta<typeof CommentCard>;
 
-const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard { ...args } />;
+const Template: ComponentStory<typeof CommentCard> = (args) => (
+    <CommentCard {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
     comment: {
         id: '1',
         text: 'text1',
-        user: {id: '1', username: 'greg'}
+        user: { id: '1', username: 'greg' },
     },
-    isLoading: false
+    isLoading: false,
 };
 
 export const LoadingComment = Template.bind({});
@@ -27,10 +29,11 @@ LoadingComment.args = {
         id: '1',
         text: 'text1',
         user: {
-            id: '1', 
+            id: '1',
             username: 'greg',
-            avatar: 'https://i0.wp.com/securitymadesimple.org/wp-content/uploads/2023/03/a19aa-computerhacker.png?fit=1280%2C960&ssl=1'
-        }
+            avatar:
+        'https://i0.wp.com/securitymadesimple.org/wp-content/uploads/2023/03/a19aa-computerhacker.png?fit=1280%2C960&ssl=1',
+        },
     },
-    isLoading: true
+    isLoading: true,
 };

@@ -8,10 +8,12 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [StoreDecorator({})]
+    decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof NotificationItem>;
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem { ...args } />;
+const Template: ComponentStory<typeof NotificationItem> = (args) => (
+    <NotificationItem {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -19,6 +21,6 @@ Normal.args = {
         id: '1',
         title: 'title',
         description: 'descr',
-        href: ''
-    }    
+        href: '',
+    },
 };

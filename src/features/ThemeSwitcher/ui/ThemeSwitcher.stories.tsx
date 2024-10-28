@@ -3,7 +3,6 @@ import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecora
 import { ThemeSwitcher } from './ThemeSwitcher';
 import { Theme } from '@/shared/const/theme';
 
-
 export default {
     title: 'shared/ThemeSwitcher',
     component: ThemeSwitcher,
@@ -12,7 +11,9 @@ export default {
     },
 } as ComponentMeta<typeof ThemeSwitcher>;
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
+const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
+    <ThemeSwitcher {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};
@@ -20,4 +21,3 @@ Primary.args = {};
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
-
