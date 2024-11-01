@@ -1,15 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import AboutIcon from '@/shared/assets/icons/about.svg?react';
-import MainIcon from '@/shared/assets/icons/main.svg?react';
-import ProfileIcon from '@/shared/assets/icons/profile.svg?react';
-import ArticleIcon from '@/shared/assets/icons/article.svg?react';
+import MainIcon from '@/shared/assets/icons/main-20-20.svg';
+import AboutIcon from '@/shared/assets/icons/about-20-20.svg';
+import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
+import ArticleIcon from '@/shared/assets/icons/article-20-20.svg';
 import { SidebarItemType } from '../types/sidebar';
-import { 
-    getRouteAbout, 
-    getRouteArticles, 
-    getRouteMain, 
-    getRouteProfile 
+import {
+    getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
 } from '@/shared/const/router';
 
 export const getSidebarItems = createSelector(
@@ -19,30 +16,32 @@ export const getSidebarItems = createSelector(
             {
                 path: getRouteMain(),
                 Icon: MainIcon,
-                text: 'Главная страница'
+                text: 'Главная',
             },
             {
                 path: getRouteAbout(),
                 Icon: AboutIcon,
-                text: 'О сайте'
+                text: 'О сайте',
             },
         ];
 
-        if(userData) {
+        if (userData) {
             sidebarItemsList.push(
                 {
                     path: getRouteProfile(userData.id),
                     Icon: ProfileIcon,
-                    text: 'Profile',
-                    authOnly: true
+                    text: 'Профиль',
+                    authOnly: true,
                 },
                 {
                     path: getRouteArticles(),
                     Icon: ArticleIcon,
-                    text: 'Articles',
-                    authOnly: true
-                });
+                    text: 'Статьи',
+                    authOnly: true,
+                },
+            );
         }
+
         return sidebarItemsList;
-    }
+    },
 );
