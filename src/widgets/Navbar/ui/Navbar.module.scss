@@ -1,4 +1,4 @@
-.navbar {
+.Navbar {
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
@@ -7,10 +7,16 @@
     padding: 20px;
 }
 
-.links {
+.links,
+.actions {
     margin-left: auto;
 }
 
 .mainLink {
     margin-right: 15px;
+}
+
+.appName {
+    width: var(--sidebar-width);
+    margin-left: 15px;
 }
