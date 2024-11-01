@@ -1,4 +1,4 @@
-## Запуск проекта
+## Running the Project
 
 ```
 npm install - Install dependencies
