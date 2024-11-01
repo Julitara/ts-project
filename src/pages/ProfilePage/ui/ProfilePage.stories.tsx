@@ -1,9 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import ProfilePage from './ProfilePage';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Currency } from '@/entities/Currency';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import ProfilePage from './ProfilePage';
 import { Theme } from '@/shared/const/theme';
 
 export default {
@@ -14,43 +15,36 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => (
-    <ProfilePage {...args} />
-);
+const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [
-    StoreDecorator({
-        profile: {
-            form: {
-                username: 'admin',
-                age: 22,
-                country: Country.USA,
-                firstname: 'Julia',
-                lastname: 'Tarasova',
-                city: 'New York',
-                currency: Currency.USD,
-            },
+export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
         },
-    }),
-];
+    },
+})];
 
-export const PrimaryThemeDark = Template.bind({});
-PrimaryThemeDark.args = {};
-PrimaryThemeDark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        profile: {
-            form: {
-                username: 'admin',
-                age: 22,
-                country: Country.USA,
-                firstname: 'Julia',
-                lastname: 'Tarasova',
-                city: 'New York',
-                currency: Currency.USD,
-            },
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    profile: {
+        form: {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
         },
-    }),
-];
+    },
+})];

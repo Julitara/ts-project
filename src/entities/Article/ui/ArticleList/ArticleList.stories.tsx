@@ -1,7 +1,9 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleList } from './ArticleList';
 import { Article } from '../../model/types/article';
-import { ArticleView } from '../../model/consts/consts';
 
 export default {
     title: 'entities/Article/ArticleList',
@@ -11,24 +13,26 @@ export default {
     },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => (
-    <ArticleList {...args} />
-);
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
 const article = {
     id: '1',
-    title: 'Javascript news',
+    title: 'Javascript news asfasjf asfjkask f',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
     user: {
         id: '1',
-        username: 'admin',
-        avatar:
-      'https://pbs.twimg.com/media/DVh_uJGWsAAbben?format=jpg&name=4096x4096',
+        username: 'Ulbi tv',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
-    type: ['IT'],
+    type: [
+        'IT',
+        'SCIENCE',
+        'POLITICS',
+        'ECONOMICS',
+    ],
     blocks: [
         {
             id: '1',
@@ -63,7 +67,7 @@ const article = {
         {
             id: '3',
             type: 'CODE',
-            code: 'const path = require(\'path\');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, \'db.json\'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);',
+            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '7',
@@ -91,34 +95,40 @@ const article = {
     ],
 } as Article;
 
-export const IsLoadingBig = Template.bind({});
-IsLoadingBig.args = {
-    isLoading: true,
+export const LoadingBig = Template.bind({});
+LoadingBig.args = {
     articles: [],
+    isLoading: true,
     view: ArticleView.BIG,
 };
 
-export const IsLoadingSmall = Template.bind({});
-IsLoadingSmall.args = {
-    isLoading: true,
+export const LoadingSmall = Template.bind({});
+LoadingSmall.args = {
     articles: [],
+    isLoading: true,
     view: ArticleView.SMALL,
 };
 
-export const Small = Template.bind({});
-Small.args = {
+export const ListSmall = Template.bind({});
+ListSmall.args = {
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    isLoading: false,
     view: ArticleView.SMALL,
-    articles: new Array(9).fill(0).map((item, index) => ({
-        ...article,
-        id: String(index),
-    })),
 };
 
-export const Big = Template.bind({});
-Big.args = {
+export const ListBig = Template.bind({});
+ListBig.args = {
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({
+            ...article,
+            id: String(index),
+        })),
+    isLoading: false,
     view: ArticleView.BIG,
-    articles: new Array(9).fill(0).map((item, index) => ({
-        ...article,
-        id: String(index),
-    })),
 };

@@ -1,4 +1,4 @@
-.appLink {
+.AppLink {
     color: var(--primary-color);
 
     &:hover {
@@ -12,4 +12,8 @@
 
 .secondary {
     color: var(--inverted-primary-color);
+}
+
+.red {
+    color: red;
 }

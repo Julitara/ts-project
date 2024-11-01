@@ -1,8 +1,8 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Avatar.module.scss';
 import { CSSProperties, useMemo } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './Avatar.module.scss';
 import { AppImage } from '../AppImage';
-import UserIcon from '../../assets/icons/user-avatar-not-found.svg?react';
+import UserIcon from '../../assets/icons/user-filled.svg';
 import { Icon } from '../Icon';
 import { Skeleton } from '../Skeleton';
 
@@ -14,42 +14,31 @@ interface AvatarProps {
     fallbackInverted?: boolean;
 }
 
-export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
-    const {
-        className,
-        src, 
-        size = 100,
-        alt,
-        fallbackInverted
-    } = props;
-
+export const Avatar = ({
+    className,
+    src,
+    size = 100,
+    alt,
+    fallbackInverted,
+}: AvatarProps) => {
     const mods: Mods = {};
 
-    const styles = useMemo<CSSProperties>(() => {
-        return {
-            width: size,
-            height: size
-        };
-    }, [size]);
+    const styles = useMemo<CSSProperties>(() => ({
+        width: size,
+        height: size,
+    }), [size]);
 
-    const errorFallback = (
-        <Icon 
-            inverted={fallbackInverted} 
-            Svg={UserIcon} 
-            width={size} 
-            height={size}
-        />
-    );
-    const fallback = <Skeleton width={size} height={size} border={'50%'}/>;
+    const fallback = <Skeleton width={size} height={size} border="50%" />;
+    const errorFallback = <Icon inverted={fallbackInverted} width={size} height={size} Svg={UserIcon} />;
 
     return (
-        <AppImage 
+        <AppImage
             fallback={fallback}
             errorFallback={errorFallback}
-            src={src} 
-            className={classNames(cls.avatar, mods, [className])}
-            style={styles} 
+            src={src}
             alt={alt}
+            style={styles}
+            className={classNames(cls.Avatar, mods, [className])}
         />
     );
 };

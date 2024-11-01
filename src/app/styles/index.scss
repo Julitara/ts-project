@@ -1,13 +1,14 @@
 @import "reset";
 @import "variables/global";
-@import "themes/dark";
 @import "themes/normal";
-@import "themes/pink";
+@import "themes/dark";
+@import "themes/orange";
 
-body {
+.app,
+.app_modal,
+.app_drawer {
     font: var(--font-m);
     color: var(--primary-color);
-    user-select: none;
 }
 
 .app {
@@ -20,16 +21,16 @@ body {
 }
 
 *::-webkit-scrollbar {
-    width: 12px;
+    width: 12px;               /* ширина scrollbar */
     height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--card-bg);
+    background: var(--card-bg);        /* цвет дорожки */
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--inverted-primary-color);
-    border-radius: 20px;
-    border: 2px solid var(--primary-color);
+    background-color: var(--inverted-primary-color);    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    border: 2px solid var(--primary-color);  /* padding вокруг плашки */
 }

@@ -1,15 +1,16 @@
-import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './AvatarDropdown.module.scss';
-import { Dropdown } from '@/shared/ui/Popups';
-import { Avatar } from '@/shared/ui/Avatar';
+import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
-import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from '@/entities/User';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
-   className?: string;
+    className?: string;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
@@ -32,23 +33,23 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
     return (
         <Dropdown
+            direction="bottom left"
+            className={classNames('', {}, [className])}
             items={[
-                {
-                    content: t('profile'),
-                    href: getRouteProfile(authData.id)
-                },
                 ...(isAdminPanelAvailable ? [{
-                    content: t('admin panel'),
-                    href: getRouteAdminPanel()
+                    content: t('Админка'),
+                    href: getRouteAdmin(),
                 }] : []),
                 {
-                    content: t('logout'),
-                    onClick: onLogout
-                }
-            ]} 
-            trigger={<Avatar fallbackInverted size={30} src={authData.avatar}/>}
-            direction='bottom left'
-            className={classNames(cls.avatarDropdown, {}, [className])}
+                    content: t('Профиль'),
+                    href: getRouteProfile(authData.id),
+                },
+                {
+                    content: t('Выйти'),
+                    onClick: onLogout,
+                },
+            ]}
+            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
         />
     );
 });

@@ -10,7 +10,6 @@ export enum AppRoutes {
     FORBIDDEN = 'forbidden',
     // last
     NOT_FOUND = 'not_found',
-  //   ERROR = 'error',
 }
 
 export const getRouteMain = () => '/';
@@ -20,6 +19,5 @@ export const getRouteArticles = () => '/articles';
 export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
 export const getRouteArticleCreate = () => '/articles/new';
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
-export const getRouteAdminPanel = () => '/admin';
+export const getRouteAdmin = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
-export const getRouteNotFound = () => '*';

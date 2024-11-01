@@ -1,4 +1,6 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { CommentCard } from './CommentCard';
 
 export default {
@@ -9,31 +11,23 @@ export default {
     },
 } as ComponentMeta<typeof CommentCard>;
 
-const Template: ComponentStory<typeof CommentCard> = (args) => (
-    <CommentCard {...args} />
-);
+const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
     comment: {
         id: '1',
-        text: 'text1',
-        user: { id: '1', username: 'greg' },
+        text: 'hello world',
+        user: { id: '1', username: 'Vasya' },
     },
-    isLoading: false,
 };
 
-export const LoadingComment = Template.bind({});
-LoadingComment.args = {
+export const Loading = Template.bind({});
+Loading.args = {
     comment: {
         id: '1',
-        text: 'text1',
-        user: {
-            id: '1',
-            username: 'greg',
-            avatar:
-        'https://i0.wp.com/securitymadesimple.org/wp-content/uploads/2023/03/a19aa-computerhacker.png?fit=1280%2C960&ssl=1',
-        },
+        text: 'hello world',
+        user: { id: '1', username: 'Vasya' },
     },
     isLoading: true,
 };

@@ -1,22 +1,21 @@
-import { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './NotificationButton.module.scss';
-import { Popover } from '@/shared/ui/Popups';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import NotificationIcon from '@/shared/assets/icons/notify.svg?react';
 import { Icon } from '@/shared/ui/Icon';
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { NotificationList } from '@/entities/Notification';
-import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
+import { Popover } from '@/shared/ui/Popups';
 import { Drawer } from '@/shared/ui/Drawer';
+import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
-   className?: string;
+    className?: string;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
     const { className } = props;
     const [isOpen, setIsOpen] = useState(false);
-    const isMobile = useDevice();
 
     const onOpenDrawer = useCallback(() => {
         setIsOpen(true);
@@ -24,33 +23,32 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 
     const onCloseDrawer = useCallback(() => {
         setIsOpen(false);
-    }, []);    
+    }, []);
 
     const trigger = (
         <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
-            <Icon Svg={NotificationIcon} inverted/>
+            <Icon Svg={NotificationIcon} inverted />
         </Button>
     );
 
     return (
-        <>
-            {isMobile ?
-                <>
-                    {trigger}
-                    <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                        <NotificationList/>
-                    </Drawer>
-                </>
-                :
-                <Popover 
+        <div>
+            <BrowserView>
+                <Popover
+                    className={classNames(cls.NotificationButton, {}, [className])}
+                    direction="bottom left"
                     trigger={trigger}
-                    direction='bottom left'
-                    className={classNames(cls.notificationButton, {}, [className])}
                 >
-                    <NotificationList className={cls.notifications}/>
+                    <NotificationList className={cls.notifications} />
                 </Popover>
-            }
-        </>
-        
+            </BrowserView>
+            <MobileView>
+                {trigger}
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                    <NotificationList />
+                </Drawer>
+            </MobileView>
+        </div>
+
     );
 });

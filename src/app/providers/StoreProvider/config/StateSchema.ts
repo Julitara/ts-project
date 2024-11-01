@@ -1,54 +1,54 @@
-import { AnyAction, CombinedState, Reducer, ReducersMapObject } 
-    from '@reduxjs/toolkit';
-import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
+import {
+    AnyAction, EnhancedStore, Reducer, ReducersMapObject,
+} from '@reduxjs/toolkit';
+import { CombinedState } from 'redux';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailsShema } from '@/entities/Article';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { UserSchema } from '@/entities/User';
 import { CounterSchema } from '@/entities/Counter';
-import { UserShema } from '@/entities/User';
-import { AddCommentFormShema } from '@/features/AddCommentForm';
-import { LoginShema } from '@/features/AuthByUsername';
-import { ProfileSchema } from '@/features/EditableProfileCard';
-import { ScrollSaveShema } from '@/features/ScrollSave';
-import {  
-    ArticleDetailsPageShema
+import { ArticleDetailsSchema } from '@/entities/Article';
+import {
+    ArticleDetailsPageSchema,
 } from '@/pages/ArticleDetailsPage';
-import { ArticlesPageShema } from '@/pages/ArticlesPage';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { UISchema } from '@/features/UI';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { createReduxStore } from './store';
+import { ProfileSchema } from '@/features/editableProfileCard';
 
 export interface StateSchema {
     counter: CounterSchema;
-    user: UserShema;
-    scrollSave: ScrollSaveShema;
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+    user: UserSchema;
+    ui: UISchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
-    //async reducers
-    loginForm?: LoginShema;
+    // Асинхронные редюсеры
+    loginForm?: LoginSchema;
     profile?: ProfileSchema;
-    articleDetails?: ArticleDetailsShema;
-    addCommentForm?: AddCommentFormShema;
-    articlesPage?: ArticlesPageShema;
-    articleDetailsPage?: ArticleDetailsPageShema;
+    articleDetails?: ArticleDetailsSchema;
+    addCommentForm?: AddCommentFormSchema;
+    articlesPage?: ArticlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
-export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
-    getMountedReducers: () => MountedReducers
+    // true - вмонтирован, false - демонтирован
+    getMountedReducers: () => MountedReducers;
 }
 
-export interface ReduxStoreWithManadger extends ToolkitStore<StateSchema> {
-    reducerManager: ReducerManager
+export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
+    reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    //navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {
@@ -56,5 +56,3 @@ export interface ThunkConfig<T> {
     extra: ThunkExtraArg;
     state: StateSchema;
 }
-
-export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

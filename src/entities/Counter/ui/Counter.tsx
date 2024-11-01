@@ -1,22 +1,48 @@
-/* eslint-disable i18next/no-literal-string */
+import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/Button';
 import { useCounterActions } from '../model/slice/counterSlice';
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
-interface CounterProps {
-    className?: string;
-}
-
-export const Counter: React.FC<CounterProps> = (props: CounterProps) => {
+export const Counter = () => {
+    const dispatch = useDispatch();
     const counterValue = useCounterValue();
+    const { t } = useTranslation();
     const { decrement, increment, add } = useCounterActions();
+
+    const handleInc = () => {
+        increment();
+    };
+
+    const handleDec = () => {
+        decrement();
+    };
+
+    const handleAddFive = () => {
+        add(5);
+    };
 
     return (
         <div>
-            <h1 data-testid='counter-value'>value = {counterValue}</h1>
-            <Button onClick={() => increment()} data-testid='increment-btn'>increment</Button>
-            <Button onClick={() => decrement()} data-testid='decrement-btn'>decrement</Button>
-            <Button onClick={() => add(5)} data-testid='decrement-btn'>add 5</Button>
+            <h1 data-testid="value-title">{counterValue}</h1>
+            <Button
+                onClick={handleAddFive}
+                data-testid="increment-btn5"
+            >
+                {t('add5')}
+            </Button>
+            <Button
+                onClick={handleInc}
+                data-testid="increment-btn"
+            >
+                {t('increment')}
+            </Button>
+            <Button
+                data-testid="decrement-btn"
+                onClick={handleDec}
+            >
+                {t('decrement')}
+            </Button>
         </div>
     );
 };

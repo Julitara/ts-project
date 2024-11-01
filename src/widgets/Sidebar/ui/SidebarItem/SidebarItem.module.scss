@@ -3,19 +3,19 @@
     align-items: center;
 }
 
-.icon {
-    fill: var(--inverted-primary-color);
-}
-
 .link {
     margin-left: 10px;
     opacity: 1;
 }
 
+.icon {
+    fill: var(--inverted-primary-color);
+}
+
 .collapsed {
     .link {
         opacity: 0;
-        transition: opacity 0.3s ease-in-out;
+        transition: 0.2s opacity;
         width: 0;
     }
 }

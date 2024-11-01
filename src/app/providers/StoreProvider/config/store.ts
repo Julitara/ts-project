@@ -1,23 +1,22 @@
-import { CombinedState, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
-import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { CombinedState, Reducer } from 'redux';
 import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
-import { createReducerManager } from './reducerManager';
 import { $api } from '@/shared/api/api';
-import { scrollSaveReducer } from '@/features/ScrollSave';
+import { uiReducer } from '@/features/UI';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
-    initialState?: StateSchema, 
+    initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    //navigate?: (to: To, options?: NavigateOptions) => void
 ) {
-
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
-        scrollSave: scrollSaveReducer,
+        ui: uiReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
@@ -25,23 +24,23 @@ export function createReduxStore(
 
     const extraArg: ThunkExtraArg = {
         api: $api,
-        //navigate
     };
 
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
-        middleware: getDefaultMiddleware => getDefaultMiddleware({
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             thunk: {
-                extraArgument: extraArg
-            }
-        }).concat(rtkApi.middleware)
+                extraArgument: extraArg,
+            },
+        }).concat(rtkApi.middleware),
     });
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     store.reducerManager = reducerManager;
 
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

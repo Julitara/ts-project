@@ -1,14 +1,9 @@
-.recommendList {
-    margin-top: 20px;
-    flex-wrap: nowrap;
-    overflow-y: hidden;
-    overflow-x: auto;
-}
-
-.articleDetailsPage {
+.ArticleDetailsPage {
     min-height: 100%;
 }
 
-.commentTitle {
-    margin-top: 20px;
+.recommendations {
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
 }

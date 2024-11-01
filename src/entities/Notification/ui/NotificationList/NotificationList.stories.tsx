@@ -1,8 +1,9 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import withMock from 'storybook-addon-mock';
 import { NotificationList } from './NotificationList';
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-//import withMock from "storybook-addon-mock";
-import { Notification } from '../../model/types/notification';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'entities/Notification/NotificationList',
@@ -10,21 +11,14 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [StoreDecorator({})],
+    decorators: [withMock],
 } as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => (
-    <NotificationList {...args} />
-);
-
-const notificationData: Notification = {
-    id: '1',
-    title: 'testtitile',
-    description: 'testdescr',
-    href: '',
-};
+const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
 
 export const Normal = Template.bind({});
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
     mockData: [
         {
@@ -32,10 +26,21 @@ Normal.parameters = {
             method: 'GET',
             status: 200,
             response: [
-                { ...notificationData, id: '1' },
-                { ...notificationData, id: '2' },
-                { ...notificationData, id: '3' },
-                { ...notificationData, id: '4' },
+                {
+                    id: '1',
+                    title: 'Уведомление',
+                    description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                },
+                {
+                    id: '2',
+                    title: 'Уведомление 2',
+                    description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                },
+                {
+                    id: '3',
+                    title: 'Уведомление 3',
+                    description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                },
             ],
         },
     ],

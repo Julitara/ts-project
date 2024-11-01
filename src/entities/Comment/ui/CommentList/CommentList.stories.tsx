@@ -1,4 +1,6 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { CommentList } from './CommentList';
 
 export default {
@@ -9,25 +11,26 @@ export default {
     },
 } as ComponentMeta<typeof CommentList>;
 
-const Template: ComponentStory<typeof CommentList> = (args) => (
-    <CommentList {...args} />
-);
+const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
     comments: [
         {
             id: '1',
-            text: 'text1',
-            user: { id: '1', username: 'greg' },
+            text: 'hello world',
+            user: { id: '1', username: 'Vasya' },
         },
         {
             id: '2',
-            text: 'text2',
-            user: { id: '1', username: 'greg' },
+            text: 'Comment 2',
+            user: { id: '1', username: 'Petya' },
         },
     ],
 };
-// Normal.decorators = [
-//     StoreDecorator({})
-// ];
+
+export const Loading = Template.bind({});
+Loading.args = {
+    comments: [],
+    isLoading: true,
+};

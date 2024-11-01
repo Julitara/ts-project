@@ -1,4 +1,6 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Flex } from './Flex';
 
 export default {
@@ -13,21 +15,9 @@ const Template: ComponentStory<typeof Flex> = (args) => <Flex {...args} />;
 
 export const Row = Template.bind({});
 Row.args = {
-    direction: 'row',
     children: (
         <>
             <div>first</div>
-            <div>first</div>
-            <div>first</div>
-        </>
-    ),
-};
-
-export const Column = Template.bind({});
-Column.args = {
-    direction: 'column',
-    children: (
-        <>
             <div>first</div>
             <div>first</div>
             <div>first</div>
@@ -43,15 +33,16 @@ RowGap4.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
+            <div>first</div>
         </>
     ),
 };
-
 export const RowGap8 = Template.bind({});
 RowGap8.args = {
     gap: '8',
     children: (
         <>
+            <div>first</div>
             <div>first</div>
             <div>first</div>
             <div>first</div>
@@ -67,16 +58,17 @@ RowGap16.args = {
             <div>first</div>
             <div>first</div>
             <div>first</div>
+            <div>first</div>
         </>
     ),
 };
 
-export const ColumnGap8 = Template.bind({});
-ColumnGap8.args = {
+export const Column = Template.bind({});
+Column.args = {
     direction: 'column',
-    gap: '8',
     children: (
         <>
+            <div>first</div>
             <div>first</div>
             <div>first</div>
             <div>first</div>
@@ -86,10 +78,11 @@ ColumnGap8.args = {
 
 export const ColumnGap16 = Template.bind({});
 ColumnGap16.args = {
-    direction: 'column',
     gap: '16',
+    direction: 'column',
     children: (
         <>
+            <div>first</div>
             <div>first</div>
             <div>first</div>
             <div>first</div>
@@ -103,6 +96,7 @@ ColumnAlignEnd.args = {
     align: 'end',
     children: (
         <>
+            <div>first</div>
             <div>first</div>
             <div>first</div>
             <div>first</div>

@@ -1,4 +1,4 @@
-import { UserRole } from '../consts/consts';
+import { UserRole } from '../consts/userConsts';
 
 export interface User {
     id: string;
@@ -7,8 +7,8 @@ export interface User {
     roles?: UserRole[];
 }
 
-export interface UserShema {
+export interface UserSchema {
     authData?: User;
 
-    _inited: boolean;    
+    _inited: boolean;
 }

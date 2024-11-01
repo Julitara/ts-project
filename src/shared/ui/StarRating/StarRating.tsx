@@ -2,67 +2,62 @@ import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StarRating.module.scss';
 import { Icon } from '../Icon/Icon';
-import StarIcon from '@/shared/assets/icons/star-raiting.svg?react';
-import { HStack } from '../Stack';
+import StarIcon from '@/shared/assets/icons/star.svg';
 
 interface StarRatingProps {
-   className?: string;
-   onSelect?: (starsCount: number) => void;
-   size?: number;
-   selectedStars?: number
+    className?: string;
+    onSelect?: (starsCount: number) => void;
+    size?: number;
+    selectedStars?: number;
 }
 
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
-    const { 
-        className,
-        onSelect,
-        size = 30,
-        selectedStars = 0 
+    const {
+        className, size = 30, selectedStars = 0, onSelect,
     } = props;
-
-    const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
-    const onHover = (starNum: number) => () => {
+    const onHover = (starsCount: number) => () => {
         if (!isSelected) {
-            setCurrentStarCount(starNum);
+            setCurrentStarsCount(starsCount);
         }
     };
 
     const onLeave = () => {
         if (!isSelected) {
-            setCurrentStarCount(0);
+            setCurrentStarsCount(0);
         }
     };
 
     const onClick = (starsCount: number) => () => {
-        if(!isSelected) {
+        if (!isSelected) {
             onSelect?.(starsCount);
-            setCurrentStarCount(starsCount);
+            setCurrentStarsCount(starsCount);
             setIsSelected(true);
         }
     };
 
     return (
-        <HStack gap='8'>
-            {stars.map(starNum => (
-                <Icon 
-                    Svg={StarIcon} 
-                    key={starNum}
+        <div className={classNames(cls.StarRating, {}, [className])}>
+            {stars.map((starNumber) => (
+                <Icon
                     className={classNames(
-                        cls.starIcon, 
-                        {[cls.isSelected]: isSelected}, 
-                        [currentStarCount >= starNum ? cls.hovered : cls.normal]
+                        cls.starIcon,
+                        { [cls.selected]: isSelected },
+                        [currentStarsCount >= starNumber ? cls.hovered : cls.normal],
                     )}
+                    Svg={StarIcon}
+                    key={starNumber}
                     width={size}
                     height={size}
                     onMouseLeave={onLeave}
-                    onMouseEnter={onHover(starNum)}
-                    onClick={onClick(starNum)}
+                    onMouseEnter={onHover(starNumber)}
+                    onClick={onClick(starNumber)}
                 />
             ))}
-        </HStack>
+        </div>
     );
 });

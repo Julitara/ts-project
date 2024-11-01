@@ -1,4 +1,4 @@
-.code {
+.Code {
     border: 1px solid var(--primary-color);
     padding: 20px;
     position: relative;
@@ -12,7 +12,6 @@
     top: 20px;
 }
 
-.copyIcon {
+.copyIcon path {
     stroke: var(--primary-color);
-    fill: none;
 }

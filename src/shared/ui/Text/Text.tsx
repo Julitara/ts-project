@@ -1,17 +1,17 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Text.module.scss';
 import { memo } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './Text.module.scss';
 
 export enum TextTheme {
     PRIMARY = 'primary',
     INVERTED = 'inverted',
-    ERROR = 'error'
+    ERROR = 'error',
 }
 
 export enum TextAlign {
     RIGHT = 'right',
     LEFT = 'left',
-    CENTER = 'center'
+    CENTER = 'center',
 }
 
 export enum TextSize {
@@ -27,34 +27,41 @@ interface TextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+
     'data-testid'?: string;
 }
 
-type HeaderTagType = 'h1' | 'h2' | 'h3'
+type HeaderTagType = 'h1' | 'h2' | 'h3';
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.S]: 'h3',
     [TextSize.M]: 'h2',
-    [TextSize.L]: 'h1'
+    [TextSize.L]: 'h1',
 };
 
-export const Text: React.FC<TextProps> = memo((props: TextProps) => {
+export const Text = memo((props: TextProps) => {
     const {
         className,
-        title,
         text,
+        title,
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
-        'data-testid': dataTestId = 'Text'
+        'data-testid': dataTestId = 'Text',
     } = props;
 
     const HeaderTag = mapSizeToHeaderTag[size];
 
+    const mods: Mods = {
+        [cls[theme]]: true,
+        [cls[align]]: true,
+        [cls[size]]: true,
+    };
+
     return (
-        <div className={classNames('', {}, [className, cls[theme], cls[align], cls[size]])}>
+        <div className={classNames(cls.Text, mods, [className])}>
             {title && (
-                <HeaderTag 
+                <HeaderTag
                     className={cls.title}
                     data-testid={`${dataTestId}.Header`}
                 >
@@ -62,7 +69,7 @@ export const Text: React.FC<TextProps> = memo((props: TextProps) => {
                 </HeaderTag>
             )}
             {text && (
-                <p 
+                <p
                     className={cls.text}
                     data-testid={`${dataTestId}.Paragraph`}
                 >

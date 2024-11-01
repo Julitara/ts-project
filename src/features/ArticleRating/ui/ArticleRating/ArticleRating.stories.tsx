@@ -1,33 +1,33 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import StoreDecorator from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import withMock from 'storybook-addon-mock';
 import ArticleRating from './ArticleRating';
-//import withMock from 'storybook-addon-mock';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-    title: 'features/Article/ArticleRating',
+    title: 'features/ArticleRating',
     component: ArticleRating,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [
-        StoreDecorator({
-            user: {
-                authData: { id: '1' },
-            },
-        }),
-    ],
+    decorators: [withMock],
 } as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => (
-    <ArticleRating {...args} />
-);
+const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
 
-export const Rate = Template.bind({});
-Rate.args = {
+export const Normal = Template.bind({});
+Normal.args = {
     articleId: '1',
 };
-
-Rate.parameters = {
+Normal.decorators = [
+    StoreDecorator({
+        user: {
+            authData: { id: '1' },
+        },
+    }),
+];
+Normal.parameters = {
     mockData: [
         {
             url: `${__API__}/article-ratings?userId=1&articleId=1`,
@@ -46,7 +46,13 @@ export const WithoutRate = Template.bind({});
 WithoutRate.args = {
     articleId: '1',
 };
-
+WithoutRate.decorators = [
+    StoreDecorator({
+        user: {
+            authData: { id: '1' },
+        },
+    }),
+];
 WithoutRate.parameters = {
     mockData: [
         {

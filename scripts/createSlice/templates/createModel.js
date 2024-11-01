@@ -4,8 +4,7 @@ const reduxSliceTemplate = require('./reduxSliceTemplate');
 const schemaTypeTemplate = require('./schemaTypeTemplate');
 
 module.exports = async (layer, sliceName) => {
-    const resolveModelPath = (...segments) => 
-        resolveRoot('src', layer, sliceName, 'model', ...segments);
+    const resolveModelPath = (...segments) => resolveRoot('src', layer, sliceName, 'model', ...segments);
 
     const createModelStructure = async () => {
         try {

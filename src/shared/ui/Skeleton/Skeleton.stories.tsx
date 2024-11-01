@@ -1,6 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Skeleton } from './Skeleton';
-import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 export default {
@@ -11,9 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof Skeleton>;
 
-const Template: ComponentStory<typeof Skeleton> = (args) => (
-    <Skeleton {...args} />
-);
+const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -34,7 +34,6 @@ NormalDark.args = {
     height: 200,
 };
 NormalDark.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const CircleDark = Template.bind({});
 CircleDark.args = {
     border: '50%',
@@ -42,18 +41,3 @@ CircleDark.args = {
     height: 100,
 };
 CircleDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const NormalPink = Template.bind({});
-NormalPink.args = {
-    width: '100%',
-    height: 200,
-};
-NormalPink.decorators = [ThemeDecorator(Theme.PINK)];
-
-export const CirclePink = Template.bind({});
-CirclePink.args = {
-    border: '50%',
-    width: 100,
-    height: 100,
-};
-CirclePink.decorators = [ThemeDecorator(Theme.PINK)];

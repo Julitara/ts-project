@@ -12,6 +12,5 @@ export function useThrottle(callback: (...args: any[]) => void, delay: number) {
                 throttleRef.current = false;
             }, delay);
         }
-        
     }, [callback, delay]);
 }

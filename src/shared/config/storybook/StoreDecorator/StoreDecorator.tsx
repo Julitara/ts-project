@@ -1,11 +1,11 @@
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDetailsReducer } from '@/entities/Article/testing';
-import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
-import { profileReducer } from '@/features/EditableProfileCard/testing';
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { articleDetailsReducer } from '@/entities/Article/testing';
+import { addCommentFormReducer } from '@/features/addCommentForm/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
@@ -15,18 +15,11 @@ const defaultAsyncReducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
 };
 
-export default function StoreDecorator(
+export const StoreDecorator = (
     state: DeepPartial<StateSchema>,
-    asyncReducers?: ReducersList
-) {
-    return function StoreDecorator (StoryComponent: Story) {
-        return (
-            <StoreProvider 
-                initialState={state} 
-                asyncReducers={{...defaultAsyncReducers, ...asyncReducers}}
-            >
-                <StoryComponent />
-            </StoreProvider>
-        );
-    };
-}
+    asyncReducers?: ReducersList,
+) => (StoryComponent: Story) => (
+    <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
+        <StoryComponent />
+    </StoreProvider>
+);
